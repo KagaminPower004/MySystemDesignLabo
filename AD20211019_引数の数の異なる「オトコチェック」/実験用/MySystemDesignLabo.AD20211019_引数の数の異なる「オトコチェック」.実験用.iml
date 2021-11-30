@@ -9,17 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
-        <CLASSES />
-        <JAVADOC>
-          <root url="file://$USER_HOME$/.jdks/commons-lang3-3.12.0-bin/commons-lang3-3.12.0/apidocs" />
-        </JAVADOC>
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/.jdks/commons-lang3-3.12.0-bin/commons-lang3-3.12.0/commons-lang3-3.12.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/commons-lang3-3.12.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
