@@ -33,10 +33,9 @@ public class 全人数比較可能判定サービス {
     }
 
     public 回答 全オトコ比較非該当箇所(){
-        final String newLine = new NewLine(1).executed();
         return new 回答(
                   二人比較非該当箇所().回答()
-                + newLine
+                + new NewLine().executed()
                 + 三人比較非該当箇所().回答()
                 );
     }

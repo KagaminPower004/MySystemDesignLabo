@@ -1,7 +1,9 @@
 package オトコチェック.user.利用者;
 
 import オトコチェック.business.service.オトコ比較サービス;
+import オトコチェック.business.tool.NewLine;
 import オトコチェック.domain.model.item.otoko.王子様;
+import オトコチェック.domain.model.item.message.回答;
 
 public class Delight {
     public static void main(String[] args) {
@@ -15,8 +17,12 @@ public class Delight {
         String type = args[0];
 
         //If文スッキリ(⋈◍＞◡＜◍)。✧♡
-        if (type.equals("痩せてる")){ System.out.println( my体重比較.二人比較( 候補2, 候補2 ).回答() + "大好き♪" ); }
-        if (type.equals("背が高い")){ System.out.println( my身長比較.三人比較( 候補2, 候補2, 候補2 ).回答() + "大好き♪" ); }
+        if (type.equals("痩せてる")){ System.out.println( My回答(my体重比較.二人比較( 候補2, 候補2 )).回答()); }
+        if (type.equals("背が高い")){ System.out.println( My回答(my身長比較.三人比較( 候補2, 候補2, 候補2 )).回答()); }
+    }
 
+    private static 回答 My回答(回答 元回答){
+        //「元回答」を基に、自分なりにアレンジした回答インスタンスを新たに作る。
+        return new 回答(元回答.回答() + new NewLine(3).executed() + "大好き");
     }
 }
