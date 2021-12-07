@@ -1,7 +1,7 @@
 package オトコチェック.user.利用者;
 
+import オトコチェック.user.tool.NewLine;
 import オトコチェック.business.service.オトコ比較サービス;
-import オトコチェック.business.tool.NewLine;
 import オトコチェック.domain.model.item.otoko.王子様;
 import オトコチェック.domain.model.item.message.回答;
 
@@ -23,6 +23,6 @@ public class Delight {
 
     private static 回答 My回答(回答 元回答){
         //「元回答」を基に、自分なりにアレンジした回答インスタンスを新たに作る。
-        return new 回答(元回答.回答() + new NewLine(3).executed() + "大好き");
+        return new 回答(元回答.回答() + new NewLine(8).executed() + "大好き♪");
     }
 }

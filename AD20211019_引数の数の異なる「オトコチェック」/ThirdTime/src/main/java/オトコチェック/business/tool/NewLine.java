@@ -11,7 +11,7 @@ public class NewLine {
 
     private static String makeLine(){ return newLine; }
 
-    public final String executed(){
+    public String executed(){
         return StringUtils.repeat(makeLine(), this.行数);
     }
 }
