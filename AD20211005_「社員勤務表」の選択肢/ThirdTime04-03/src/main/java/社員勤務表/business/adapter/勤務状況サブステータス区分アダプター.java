@@ -1,8 +1,6 @@
 package 社員勤務表.business.adapter;
 
-import 社員勤務表.business.adapter.parts.勤務状況サブステータス区分_場所;
-import 社員勤務表.business.adapter.parts.勤務状況サブステータス区分_屋内;
-import 社員勤務表.business.adapter.parts.勤務状況サブステータス区分_状態;
+import 社員勤務表.business.adapter.parts.*;
 import 社員勤務表.business.service.勤務状況サブステータス区分インターフェース;
 import 社員勤務表.domain.model.*;
 
