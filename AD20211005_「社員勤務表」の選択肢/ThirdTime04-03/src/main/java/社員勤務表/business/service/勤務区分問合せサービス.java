@@ -1,7 +1,6 @@
 package 社員勤務表.business.service;
 
 import 社員勤務表.business.adapter.勤務区分アダプター;
-import 社員勤務表.domain.model.勤務区分;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -31,23 +30,23 @@ public class 勤務区分問合せサービス {
     }
 
     private List<勤務区分インターフェース> テレワーク設定(){
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.フル出勤));
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.午前休  ));
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.午後休  ));
+        my勤務区分list.add(勤務区分アダプター.フル出勤);
+        my勤務区分list.add(勤務区分アダプター.午前休  );
+        my勤務区分list.add(勤務区分アダプター.午後休  );
 
         return  Collections.unmodifiableList(my勤務区分list);
     }
     private List<勤務区分インターフェース> 出社設定(){
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.フル出勤));
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.午前休  ));
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.午後休  ));
+        my勤務区分list.add(勤務区分アダプター.フル出勤);
+        my勤務区分list.add(勤務区分アダプター.午前休  );
+        my勤務区分list.add(勤務区分アダプター.午後休  );
 
         return  Collections.unmodifiableList(my勤務区分list);
     }
     private List<勤務区分インターフェース> 非出社設定(){
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.週休日));
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.休暇  ));
-        my勤務区分list.add(new 勤務区分アダプター(勤務区分.欠勤  ));
+        my勤務区分list.add(勤務区分アダプター.週休日);
+        my勤務区分list.add(勤務区分アダプター.休暇  );
+        my勤務区分list.add(勤務区分アダプター.欠勤  );
 
         return  Collections.unmodifiableList(my勤務区分list);
     }
