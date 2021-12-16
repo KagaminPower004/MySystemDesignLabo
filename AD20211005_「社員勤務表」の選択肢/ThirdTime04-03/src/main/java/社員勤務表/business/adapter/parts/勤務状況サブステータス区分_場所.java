@@ -1,4 +1,4 @@
-package 社員勤務表.business.translator.parts;
+package 社員勤務表.business.adapter.parts;
 
 import 社員勤務表.business.tool.場所区分判定;
 import 社員勤務表.business.service.勤務状況サブステータス区分インターフェース;

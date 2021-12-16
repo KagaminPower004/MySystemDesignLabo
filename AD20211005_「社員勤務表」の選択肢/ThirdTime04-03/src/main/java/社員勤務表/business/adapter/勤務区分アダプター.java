@@ -5,6 +5,7 @@ import 社員勤務表.business.tool.勤務区分判定;
 import 社員勤務表.domain.model.勤務区分;
 
 public class 勤務区分アダプター implements 勤務区分インターフェース {
+
     private 勤務区分 my勤務区分;
 
     public 勤務区分アダプター(勤務区分 my勤務区分){
