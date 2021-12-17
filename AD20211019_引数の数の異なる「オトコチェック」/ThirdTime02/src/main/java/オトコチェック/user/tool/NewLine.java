@@ -4,5 +4,5 @@ public class NewLine extends オトコチェック.business.tool.NewLine {
     public NewLine()               { super(1); }
     public NewLine(Integer 行数)    { super(行数); }
     public final String executed() { return super.executed(); }
-    public static final String staticExecuted() { return System.lineSeparator(); }
+    public static final String hiSpeedExecuted() { return System.lineSeparator(); }
 }

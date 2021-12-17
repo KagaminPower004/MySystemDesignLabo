@@ -16,7 +16,7 @@ public class Happy {
         String type = args[0];
 
         //If文スッキリ(⋈◍＞◡＜◍)。✧♡
-        if (type.equals("痩せてる")){ System.out.println( my体重比較.二人比較( 候補1, 候補2 ).回答() + NewLine.staticExecuted() + "大好き♪" ); }
+        if (type.equals("痩せてる")){ System.out.println( my体重比較.二人比較( 候補1, 候補2 ).回答() + NewLine.hiSpeedExecuted() + "大好き♪" ); }
         if (type.equals("背が高い")){ System.out.println( my身長比較.三人比較( 候補1, 候補2, 候補3 ).回答() + "大好き♪" ); }
     }
 }
