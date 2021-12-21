@@ -4,7 +4,6 @@ import 社員勤務表.business.adapter.勤務状況サブステータス区分�
 import 社員勤務表.business.tool.NewLine;
 import 社員勤務表.business.tool.区分値区切り線;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,17 +36,14 @@ public class 勤務状況サブステータス区分問合せサービス {
     public final String 問合せ回答(){
 
         //初期化
-        勤務状況サブステータス区分問合せサービス my勤務状況サブステータス区分問合せ
-                = new 勤務状況サブステータス区分問合せサービス(my勤務状況);
-        my勤務状況サブステータス区分list
-                = my勤務状況サブステータス区分問合せ.勤務状況サブステータス区分List();
+        my勤務状況サブステータス区分list = this.勤務状況サブステータス区分List();
 
         //加工
         final String _result01     = "『勤務状況』が" + my勤務状況 + "の場合、該当する『勤務状況サブステータス区分』は"
                                     + NewLine.hiSpeedExecuted();
 
         final String _result02work = my勤務状況サブステータス区分list
-                                     .stream().map( list要素 -> " ●" + list要素.name())
+                                     .stream().map( list要素 -> " ●" + list要素.区分値())
                                         .collect(Collectors.toList())
                                         .toString();
         //↑ cf)[ ●list要素.name(), ●list要素.name(), ●list要素.name()...]
@@ -55,7 +51,7 @@ public class 勤務状況サブステータス区分問合せサービス {
         final String _result02     = _result02work
                                         .replace("["," ")
                                         .replace("]","")
-                                        .replace( " ●" + new 区分値区切り線().name(),new 区分値区切り線().name())
+                                        .replace( " ●" + new 区分値区切り線().区分値(),new 区分値区切り線().区分値())
                                         .replace(",",NewLine.hiSpeedExecuted());
                                         //↑ cf)
                                         // ●list要素.name()
@@ -78,6 +74,9 @@ public class 勤務状況サブステータス区分問合せサービス {
         my勤務状況サブステータス区分list.add(勤務状況サブステータス区分アダプター.稼働);
         my勤務状況サブステータス区分list.add(勤務状況サブステータス区分アダプター.社外);
         my勤務状況サブステータス区分list.add(勤務状況サブステータス区分アダプター.内勤);
+        my勤務状況サブステータス区分list.add(new 区分値区切り線());
+        my勤務状況サブステータス区分list.add(勤務状況サブステータス区分アダプター.稼働);
+        my勤務状況サブステータス区分list.add(勤務状況サブステータス区分アダプター.海外);
 
         return Collections.unmodifiableList(my勤務状況サブステータス区分list);
     }
