@@ -3,7 +3,6 @@ package 社員勤務表.business.service;
 import 社員勤務表.business.adapter.勤務状況サブステータス区分アダプター;
 import 社員勤務表.business.tool.NewLine;
 import 社員勤務表.business.tool.区分値区切り線;
-import 社員勤務表.domain.model.composit.勤務状況サブステータス区分;
 
 import java.util.List;
 import java.util.ArrayList;

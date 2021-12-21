@@ -1,10 +1,6 @@
 package 社員勤務表.user.domainExpert;
 
 import 社員勤務表.business.service.*;
-import 社員勤務表.user.tool.NewLine;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Pure {
 

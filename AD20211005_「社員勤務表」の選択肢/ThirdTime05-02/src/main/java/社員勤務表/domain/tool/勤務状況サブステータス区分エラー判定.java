@@ -3,6 +3,7 @@ package 社員勤務表.domain.tool;
 import 社員勤務表.domain.model.composit.勤務状況サブステータス区分;
 import 社員勤務表.domain.model.composit.勤務状況サブステータス区分インターフェース;
 
+// ※作成中
 public class 勤務状況サブステータス区分エラー判定 {
 
     private 勤務状況サブステータス区分              my勤務状況サブステータス区分;

@@ -4,7 +4,6 @@ import 社員勤務表.business.tool.NewLine;
 import 社員勤務表.business.tool.屋内区分判定;
 import 社員勤務表.business.service.勤務状況サブステータス区分インターフェース;
 import 社員勤務表.domain.model.屋内区分;
-import  java.time.LocalDate;
 
 public class 勤務状況サブステータス区分_屋内 implements 勤務状況サブステータス区分インターフェース {
 
