@@ -15,7 +15,7 @@ public class WorkSubStatusDescriptionTranslator {
         this.myWorkSubStatusAdapter = myWorkSubStatusAdapter;
     }
 
-    public final String description(){
+    public final String translated(){
 
         //Enumのswitch:
         // defaultを排すると、全網羅しないとエラーになってくれるらしい。

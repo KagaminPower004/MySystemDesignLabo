@@ -33,6 +33,6 @@ public enum WorkSubStatusAdapter implements WorkSubStatusInterface {
         //『トランスレーター』へ変換を依頼
         return new
                 WorkSubStatusDescriptionTranslator(this)
-                .description();
+                .translated();
     }
 }
