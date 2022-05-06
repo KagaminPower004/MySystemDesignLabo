@@ -31,9 +31,8 @@ public class WorkSubStatusDescriptionTranslator {
         //念のため、例外キャッチアップ
         if( myDescription.isEmpty() ){
             throw new RuntimeException(
-                      "その値は勤務状況サブステータスにはございません。[区分値:"
-                    + myWorkSubStatusAdapter.name()
-                    + "]"
+                      "その値は勤務状況サブステータスにはございません。"
+                    + "[区分値:" + myWorkSubStatusAdapter.name() + "]"
             );
         }
 
