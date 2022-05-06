@@ -8,6 +8,8 @@ import roster.domain.model.LocationDivision;
 public class WorkSubStatusDescriptionTranslator {
 
     final private WorkSubStatusAdapter myWorkSubStatusAdapter;
+    final private InsideDescriptionTranslator myInsideDescriptionTranslator
+            = new InsideDescriptionTranslator();
 
     public WorkSubStatusDescriptionTranslator(WorkSubStatusAdapter myWorkSubStatusAdapter){
         this.myWorkSubStatusAdapter = myWorkSubStatusAdapter;
@@ -19,7 +21,7 @@ public class WorkSubStatusDescriptionTranslator {
         // defaultを排すると、全網羅しないとエラーになってくれるらしい。
         final String myDescription =
         switch (myWorkSubStatusAdapter) {
-            case INSIDE  ->  new InsideDescriptionTranslator().description(); //長文なので外だし
+            case INSIDE  -> myInsideDescriptionTranslator.translated(); //長文なので外だし
             case OUTSIDE -> LocationDivision.OUTSIDE.comments();
             case 稼働     -> 状態区分.稼働.補足説明();
             case 非稼働   -> 状態区分.非稼働.補足説明();

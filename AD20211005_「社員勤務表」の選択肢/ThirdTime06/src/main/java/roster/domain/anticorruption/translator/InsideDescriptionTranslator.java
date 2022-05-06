@@ -6,7 +6,7 @@ public class InsideDescriptionTranslator {
 
     InsideDescriptionTranslator(){ }
 
-    public final String description(){
+    public final String translated(){
         final String front = "";
         final String main  = LocationDivision.INSIDE.comments();
         final String rear  = "なんてな。";
