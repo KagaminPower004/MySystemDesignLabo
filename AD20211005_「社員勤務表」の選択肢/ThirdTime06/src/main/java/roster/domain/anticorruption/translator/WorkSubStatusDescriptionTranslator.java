@@ -25,13 +25,13 @@ public class WorkSubStatusDescriptionTranslator {
             case 非稼働   -> 状態区分.非稼働.補足説明();
             case 内勤     -> 屋内区分.内勤.詳細説明();
             case 外勤     -> 屋内区分.外勤.詳細説明();
-            case 国外     -> "aaaa" ;
+            case 国外     -> "okay" ;
          };
 
         //念のため、例外キャッチアップ
-        if( myDescription.isEmpty() ){
+        if(myDescription.isEmpty()){
             throw new RuntimeException(
-                      "その値は勤務状況サブステータスにはございません。"
+                      "補足説明の記述がございません。"
                     + "[区分値:" + myWorkSubStatusAdapter.name() + "]"
             );
         }
