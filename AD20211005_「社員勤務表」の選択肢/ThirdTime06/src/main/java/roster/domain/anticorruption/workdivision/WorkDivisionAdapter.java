@@ -4,12 +4,12 @@ import roster.domain.model.WorkDivision;
 import roster.domain.support.WorkDivisionCheck;
 
 enum WorkDivisionAdapter implements WorkDivisionInterface {
-      FULL_TIME_WORK     ( WorkDivision.FULL_TIME_WORK)
-    , AFTERNOON_WORK     ( WorkDivision.AFTERNOON_WORK )
-    , MORNING_WORK       ( WorkDivision.MORNING_WORK )
+      VOLL_ZEIT_ARBEIT   ( WorkDivision.FULL_TIME_WORK)
+    , NACHMITTAG_ARBEIT  ( WorkDivision.AFTERNOON_WORK )
+    , MORGEN_ARBEIT      ( WorkDivision.MORNING_WORK )
     , WEEKLY_HOLIDAY     ( WorkDivision.WEEKLY_HOLIDAY )
-    , HOLIDAY            ( WorkDivision.HOLIDAY )
-    , ABSENCE            ( WorkDivision.ABSENCE )
+    , URLAUB             ( WorkDivision.HOLIDAY )
+    , ABWESENHEIT        ( WorkDivision.ABSENCE )
     ;
 
     WorkDivisionAdapter(final WorkDivision myWorkDivision){

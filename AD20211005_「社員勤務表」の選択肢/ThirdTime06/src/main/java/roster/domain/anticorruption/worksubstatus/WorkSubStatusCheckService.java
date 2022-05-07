@@ -4,15 +4,15 @@ import roster.domain.model.StyleDivision;
 
 public class WorkSubStatusCheckService {
 
-    private final String my勤務状況;
+    private final String myStyle;
 
-    public WorkSubStatusCheckService(String my勤務状況){
-        this.my勤務状況 = my勤務状況;
+    public WorkSubStatusCheckService(String myStyle){
+        this.myStyle = myStyle;
     }
 
     public Boolean isNG(){
         try {
-            StyleDivision.valueOf(my勤務状況);
+            StyleDivision.valueOf(myStyle);
 
             //緊急事態宣言長期休止によりテレワーク休止
             //if(this.isテレワーク()){ return true; }
@@ -24,20 +24,18 @@ public class WorkSubStatusCheckService {
         }
     }
 
-    public Boolean isTeleWork(){
-        if(my勤務状況.equals(StyleDivision.TELE_WORK.name())) { return true; }
+    public Boolean isTelework(){
+        if(myStyle.equals(StyleDivision.TELEWORK.name())) { return true; }
         else{ return false; }
     }
 
-    public Boolean isPhysicalWork(){
-        if(my勤務状況.equals(StyleDivision.PHYSICAL_WORK.name())) { return true; }
+    public Boolean isPhysical_Work(){
+        if(myStyle.equals(StyleDivision.PHYSICAL_WORK.name())) { return true; }
         else{ return false; }
     }
 
-    public Boolean isNonWork(){
-        if(my勤務状況.equals(StyleDivision.NON_WORK.name())) { return true; }
+    public Boolean isNon_Work(){
+        if(myStyle.equals(StyleDivision.NON_WORK.name())) { return true; }
         else{ return false; }
     }
-
-
 }

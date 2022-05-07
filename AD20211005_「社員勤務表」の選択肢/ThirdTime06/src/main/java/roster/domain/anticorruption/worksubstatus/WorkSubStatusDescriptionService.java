@@ -22,9 +22,9 @@ public class WorkSubStatusDescriptionService {
 
         WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(my勤務状況);
 
-        if(my勤務状況判定.isTeleWork()) { return テレワーク設定(); }
-        if(my勤務状況判定.isPhysicalWork())      { return 出社設定(); }
-        if(my勤務状況判定.isNonWork())     { return 非出社設定(); }
+        if(my勤務状況判定.isTelework()) { return テレワーク設定(); }
+        if(my勤務状況判定.isPhysical_Work())      { return 出社設定(); }
+        if(my勤務状況判定.isNon_Work())     { return 非出社設定(); }
         else                          { my勤務状況サブステータス区分list.clear(); }
 
         return  Collections.unmodifiableList(my勤務状況サブステータス区分list);

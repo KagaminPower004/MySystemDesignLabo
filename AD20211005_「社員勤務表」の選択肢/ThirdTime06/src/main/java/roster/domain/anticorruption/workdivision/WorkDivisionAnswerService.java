@@ -8,47 +8,46 @@ import java.util.Collections;
 public class WorkDivisionAnswerService {
 
     private String myStyle = "";
-    private List<WorkDivisionInterface> myWorkDivisionlist = new ArrayList<>();
+    private final List<WorkDivisionInterface> myWorkDivision_List = new ArrayList<>();
 
     public WorkDivisionAnswerService(String myStyle){
 
         WorkSubStatusCheckService myStyleCheck = new WorkSubStatusCheckService(myStyle);
 
-        if(myStyleCheck.isNG())  { System.out.println("That value does not exist."); }
+        if(myStyleCheck.isNG())  { System.out.println("This value does not exist."); }
         else                     { this.myStyle = myStyle; }
     }
 
-    public List<WorkDivisionInterface> WorkDivisionlist(){
-
+    public List<WorkDivisionInterface> workDivision_list(){
         WorkSubStatusCheckService myStyleCheck = new WorkSubStatusCheckService(myStyle);
 
-        if(myStyleCheck.isTeleWork())          {return teleworkSettings(); }
-        if(myStyleCheck.isPhysicalWork())      {return physical_workSettings(); }
-        if(myStyleCheck.isNonWork())           {return non_workSettings(); }
-        else                                   { myWorkDivisionlist.clear(); }
+        if(myStyleCheck.isTelework())          {return teleworkSettings(); }
+        if(myStyleCheck.isPhysical_Work())      {return physical_workSettings(); }
+        if(myStyleCheck.isNon_Work())           {return non_workSettings(); }
+        else                                   { myWorkDivision_List.clear(); }
 
-        return  Collections.unmodifiableList(myWorkDivisionlist);
+        return  Collections.unmodifiableList(myWorkDivision_List);
     }
 
     private List<WorkDivisionInterface> teleworkSettings(){
-        myWorkDivisionlist.add( WorkDivisionAdapter.FULL_TIME_WORK);
-        myWorkDivisionlist.add( WorkDivisionAdapter.AFTERNOON_WORK );
-        myWorkDivisionlist.add( WorkDivisionAdapter.MORNING_WORK);
+        myWorkDivision_List.add( WorkDivisionAdapter.VOLL_ZEIT_ARBEIT);
+        myWorkDivision_List.add( WorkDivisionAdapter.NACHMITTAG_ARBEIT);
+        myWorkDivision_List.add( WorkDivisionAdapter.MORGEN_ARBEIT);
 
-        return  Collections.unmodifiableList(myWorkDivisionlist);
+        return  Collections.unmodifiableList(myWorkDivision_List);
     }
     private List<WorkDivisionInterface> physical_workSettings(){
-        myWorkDivisionlist.add( WorkDivisionAdapter.FULL_TIME_WORK);
-        myWorkDivisionlist.add( WorkDivisionAdapter.AFTERNOON_WORK );
-        myWorkDivisionlist.add( WorkDivisionAdapter.MORNING_WORK );
+        myWorkDivision_List.add( WorkDivisionAdapter.VOLL_ZEIT_ARBEIT);
+        myWorkDivision_List.add( WorkDivisionAdapter.NACHMITTAG_ARBEIT);
+        myWorkDivision_List.add( WorkDivisionAdapter.MORGEN_ARBEIT);
 
-        return  Collections.unmodifiableList(myWorkDivisionlist);
+        return  Collections.unmodifiableList(myWorkDivision_List);
     }
     private List<WorkDivisionInterface> non_workSettings(){
-        myWorkDivisionlist.add( WorkDivisionAdapter.WEEKLY_HOLIDAY );
-        myWorkDivisionlist.add( WorkDivisionAdapter.HOLIDAY );
-        myWorkDivisionlist.add( WorkDivisionAdapter.ABSENCE );
+        myWorkDivision_List.add( WorkDivisionAdapter.WEEKLY_HOLIDAY );
+        myWorkDivision_List.add( WorkDivisionAdapter.URLAUB);
+        myWorkDivision_List.add( WorkDivisionAdapter.ABWESENHEIT);
 
-        return  Collections.unmodifiableList(myWorkDivisionlist);
+        return  Collections.unmodifiableList(myWorkDivision_List);
     }
 }

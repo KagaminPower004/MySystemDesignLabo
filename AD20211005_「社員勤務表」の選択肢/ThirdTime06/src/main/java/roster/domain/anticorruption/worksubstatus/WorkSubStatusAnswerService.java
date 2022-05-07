@@ -8,46 +8,46 @@ import java.util.Collections;
 public class WorkSubStatusAnswerService {
 
     private String myStyle = "" ;
-    private List<WorkSubStatusInterface> my勤務状況サブステータス区分list
+    private List<WorkSubStatusInterface> myWorkSubStatus_List
             = new ArrayList<>();
 
     public WorkSubStatusAnswerService(String myStyle){
-        WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(myStyle);
+        WorkSubStatusCheckService myStyleCheck = new WorkSubStatusCheckService(myStyle);
 
-        if(my勤務状況判定.isNG()){ System.out.println("その値は勤務状況には存在しません"); }
+        if(myStyleCheck.isNG()){ System.out.println("This value does not exist."); }
         else{ this.myStyle = myStyle; }
     }
-    public List<WorkSubStatusInterface> 勤務状況サブステータス区分List(){
-        WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(myStyle);
+    public List<WorkSubStatusInterface> workSubStatus_List(){
+        WorkSubStatusCheckService myStyleCheck = new WorkSubStatusCheckService(myStyle);
 
-        if(my勤務状況判定.isTeleWork()) { return テレワーク設定(); }
-        if(my勤務状況判定.isPhysicalWork())      { return 出社設定(); }
-        if(my勤務状況判定.isNonWork())     { return 非出社設定(); }
-        else                          { my勤務状況サブステータス区分list.clear(); }
+        if(myStyleCheck.isTelework())          { return teleworkSettings(); }
+        if(myStyleCheck.isPhysical_Work())      { return physical_workSettings(); }
+        if(myStyleCheck.isNon_Work())           { return non_workSettings(); }
+        else                                   { myWorkSubStatus_List.clear(); }
 
-        return  Collections.unmodifiableList(my勤務状況サブステータス区分list);
+        return  Collections.unmodifiableList(myWorkSubStatus_List);
     }
-    private List<WorkSubStatusInterface> テレワーク設定(){
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.WORKING);
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.OUTSIDE);
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.INDOOR);
+    private List<WorkSubStatusInterface> teleworkSettings(){
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.WORKING);
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.OUTSIDE);
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.INDOOR);
 
-        return Collections.unmodifiableList(my勤務状況サブステータス区分list);
+        return Collections.unmodifiableList(myWorkSubStatus_List);
     }
-    private List<WorkSubStatusInterface> 出社設定() {
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.WORKING);
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.INSIDE);
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.INDOOR);
-        my勤務状況サブステータス区分list.add(new SeparatorLine());
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.WORKING);
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.OUTSIDE);
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.OUTDOOR);
+    private List<WorkSubStatusInterface> physical_workSettings() {
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.WORKING);
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.INSIDE);
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.INDOOR);
+        myWorkSubStatus_List.add(new SeparatorLine());
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.WORKING);
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.OUTSIDE);
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.OUTDOOR);
 
-        return Collections.unmodifiableList(my勤務状況サブステータス区分list);
+        return Collections.unmodifiableList(myWorkSubStatus_List);
     }
-    private List<WorkSubStatusInterface> 非出社設定() {
-        my勤務状況サブステータス区分list.add(WorkSubStatusAdapter.NON_WORKING);
+    private List<WorkSubStatusInterface> non_workSettings() {
+        myWorkSubStatus_List.add(WorkSubStatusAdapter.NON_WORKING);
 
-        return Collections.unmodifiableList(my勤務状況サブステータス区分list);
+        return Collections.unmodifiableList(myWorkSubStatus_List);
     }
 }
