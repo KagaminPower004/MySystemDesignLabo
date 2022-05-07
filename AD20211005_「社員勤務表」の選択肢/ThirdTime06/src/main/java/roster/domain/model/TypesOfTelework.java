@@ -1,6 +1,6 @@
 package roster.domain.model;
 
-public enum テレワークの種類 {
+public enum TypesOfTelework {
      在宅勤務
     ,モバイル勤務
     ,サテライトオフィス勤務

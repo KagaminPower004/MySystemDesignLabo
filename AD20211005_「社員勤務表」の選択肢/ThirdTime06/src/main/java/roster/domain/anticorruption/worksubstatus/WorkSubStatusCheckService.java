@@ -1,6 +1,6 @@
-package roster.domain.anticorruption.service;
+package roster.domain.anticorruption.worksubstatus;
 
-import roster.domain.model.勤務状況;
+import roster.domain.model.StyleDivision;
 
 public class WorkSubStatusCheckService {
 
@@ -10,9 +10,9 @@ public class WorkSubStatusCheckService {
         this.my勤務状況 = my勤務状況;
     }
 
-    public Boolean is非該当(){
+    public Boolean isNG(){
         try {
-            勤務状況.valueOf(my勤務状況);
+            StyleDivision.valueOf(my勤務状況);
 
             //緊急事態宣言長期休止によりテレワーク休止
             //if(this.isテレワーク()){ return true; }
@@ -24,18 +24,18 @@ public class WorkSubStatusCheckService {
         }
     }
 
-    public Boolean isテレワーク(){
-        if(my勤務状況.equals(勤務状況.テレワーク.name())) { return true; }
+    public Boolean isTeleWork(){
+        if(my勤務状況.equals(StyleDivision.TELE_WORK.name())) { return true; }
         else{ return false; }
     }
 
-    public Boolean is出社(){
-        if(my勤務状況.equals(勤務状況.出社.name())) { return true; }
+    public Boolean isPhysicalWork(){
+        if(my勤務状況.equals(StyleDivision.PHYSICAL_WORK.name())) { return true; }
         else{ return false; }
     }
 
-    public Boolean is非出社(){
-        if(my勤務状況.equals(勤務状況.非出社.name())) { return true; }
+    public Boolean isNonWork(){
+        if(my勤務状況.equals(StyleDivision.NON_WORK.name())) { return true; }
         else{ return false; }
     }
 
