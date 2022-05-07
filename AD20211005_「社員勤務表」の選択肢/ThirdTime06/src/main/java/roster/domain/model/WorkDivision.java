@@ -1,7 +1,7 @@
 package roster.domain.model;
 
 public enum WorkDivision {
-      FULLTIME_WORK
+    FULL_TIME_WORK
     , AFTERNOON_WORK
     , MORNING_WORK
     , HOLIDAY

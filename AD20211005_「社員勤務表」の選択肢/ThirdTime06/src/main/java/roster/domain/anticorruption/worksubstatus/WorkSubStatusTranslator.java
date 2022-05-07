@@ -5,20 +5,18 @@ import roster.domain.model.DayDivision;
 import roster.domain.model.OfficeDivision;
 
 class WorkSubStatusTranslator {
-
-    final private WorkSubStatusAdapter myWorkSubStatusAdapter;
-    final private InsideDescriptionTranslator myInsideDescriptionTranslator
-            = new InsideDescriptionTranslator();
-    final private String myDescription;
+    final private WorkSubStatusAdapter           myWorkSubStatusAdapter;
+    final private String                         myDescription;
 
     WorkSubStatusTranslator(WorkSubStatusAdapter myWorkSubStatusAdapter){
         this.myWorkSubStatusAdapter = myWorkSubStatusAdapter;
 
         //区分値ごとに振り分け
         //Enumのswitch:
-        // defaultを排すると、全網羅しないとエラーになってくれるらしい。
+        //    defaultを排すると、全網羅しないとエラーになってくれるらしい。
         String myDescription = "";
-        switch (myWorkSubStatusAdapter) {
+        InsideDescriptionTranslator myInsideDescriptionTranslator = new InsideDescriptionTranslator();
+        switch (this.myWorkSubStatusAdapter) {
             case INSIDE ->
                     myDescription = myInsideDescriptionTranslator.done(); //長文なので外だし
 
@@ -39,7 +37,7 @@ class WorkSubStatusTranslator {
 
             case NON_DOMESTIC ->
                     myDescription = "okay" ; //暫定値
-        };
+        }
 
         //なんかミュータブルだけど、とりま未初期化エラー消えたんでOK！
         this.myDescription = myDescription;

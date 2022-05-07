@@ -11,4 +11,8 @@ public class WorkDivisionCheck {
     public Boolean isAvailable(){
         return myWorkDivision != null;
     }
+
+    public Boolean isNotAvailable(){
+        return ! this.isAvailable();
+    }
 }

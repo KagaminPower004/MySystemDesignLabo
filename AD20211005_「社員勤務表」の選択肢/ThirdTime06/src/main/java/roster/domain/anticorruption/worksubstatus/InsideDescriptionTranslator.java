@@ -7,7 +7,7 @@ class InsideDescriptionTranslator {
     InsideDescriptionTranslator(){ }
 
      final String done(){
-        final String front = "<!!caution!!::Not TeleWork!!>";
+        final String front = "<!!caution!!::Not Telework!!>";
         final String main  = OfficeDivision.INSIDE.comments();
         final String rear  = "Is it OK?";
 

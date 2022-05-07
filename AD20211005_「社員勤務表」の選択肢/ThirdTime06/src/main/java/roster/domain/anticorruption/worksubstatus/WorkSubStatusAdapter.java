@@ -28,7 +28,8 @@ enum WorkSubStatusAdapter implements WorkSubStatusInterface {
     //補足説明めそっど
     public final String description(){
 
-        //『トランスレーター』へ変換を依頼
+        //まとりょーしか!!
+        //   『トランスレーター』へ変換を依頼
         return new
                 WorkSubStatusTranslator(this)
                 .description();

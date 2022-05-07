@@ -7,18 +7,18 @@ import java.util.Collections;
 
 public class WorkSubStatusAnswerService {
 
-    private String my勤務状況 = "" ;
+    private String myStyle = "" ;
     private List<WorkSubStatusInterface> my勤務状況サブステータス区分list
             = new ArrayList<>();
 
-    public WorkSubStatusAnswerService(String my勤務状況){
-        WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(my勤務状況);
+    public WorkSubStatusAnswerService(String myStyle){
+        WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(myStyle);
 
         if(my勤務状況判定.isNG()){ System.out.println("その値は勤務状況には存在しません"); }
-        else{ this.my勤務状況 = my勤務状況; }
+        else{ this.myStyle = myStyle; }
     }
     public List<WorkSubStatusInterface> 勤務状況サブステータス区分List(){
-        WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(my勤務状況);
+        WorkSubStatusCheckService my勤務状況判定 = new WorkSubStatusCheckService(myStyle);
 
         if(my勤務状況判定.isTeleWork()) { return テレワーク設定(); }
         if(my勤務状況判定.isPhysicalWork())      { return 出社設定(); }
