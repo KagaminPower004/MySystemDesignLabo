@@ -1,8 +1,8 @@
 package roster.domain.anticorruption.worksubstatus;
 
-import roster.domain.model.TypeDivision;
-import roster.domain.model.DayDivision;
-import roster.domain.model.OfficeDivision;
+import roster.domain.model.typedivision.TypeDivision;
+import roster.domain.model.daydivision.DayDivision;
+import roster.domain.model.officedivision.OfficeDivision;
 
 class WorkSubStatusTranslator {
     final private WorkSubStatusAdapter           myWorkSubStatusAdapter;

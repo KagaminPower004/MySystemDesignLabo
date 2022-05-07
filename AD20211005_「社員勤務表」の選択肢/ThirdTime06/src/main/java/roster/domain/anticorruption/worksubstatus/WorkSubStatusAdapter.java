@@ -1,8 +1,11 @@
 package roster.domain.anticorruption.worksubstatus;
 
-import roster.domain.model.OfficeDivision;
-import roster.domain.model.TypeDivision;
-import roster.domain.model.DayDivision;
+import roster.domain.model.officedivision.Check_OfficeDivision;
+import roster.domain.model.officedivision.OfficeDivision;
+import roster.domain.model.typedivision.Check_TypeDivision;
+import roster.domain.model.typedivision.TypeDivision;
+import roster.domain.model.daydivision.Check_DayDivision;
+import roster.domain.model.daydivision.DayDivision;
 
 enum WorkSubStatusAdapter implements WorkSubStatusInterface {
       INSIDE      ( OfficeDivision.INSIDE )
@@ -14,16 +17,32 @@ enum WorkSubStatusAdapter implements WorkSubStatusInterface {
     , NON_DOMESTIC
     ;
 
-    private WorkSubStatusInterface  myWorkSubStatusInterface;
-    private OfficeDivision          myOfficeDividion;
-    private TypeDivision            myTypeDivision;
-    private DayDivision             myDayDivision;
-
     //コンストラクターらっしゅ！！
     WorkSubStatusAdapter(){  }
-    WorkSubStatusAdapter(OfficeDivision myOfficeDividion ){ this.myOfficeDividion = myOfficeDividion; }
-    WorkSubStatusAdapter(TypeDivision   myTypeDivision )  { this.myTypeDivision   = myTypeDivision; }
-    WorkSubStatusAdapter(DayDivision    myDayDivision )   { this.myDayDivision    = myDayDivision; }
+
+    WorkSubStatusAdapter(OfficeDivision myOfficeDivision )
+        {
+            //区分値チェック
+            if( new Check_OfficeDivision(myOfficeDivision).isNotEnabled() ){
+                throw new RuntimeException( "This Object is not enabled." );
+            }
+        }
+
+    WorkSubStatusAdapter(TypeDivision   myTypeDivision )
+        {
+            //区分値チェック
+            if( new Check_TypeDivision(myTypeDivision).isNotEnabled() ){
+                throw new RuntimeException( "This Object is not enabled." );
+            }
+        }
+
+    WorkSubStatusAdapter(DayDivision    myDayDivision )
+        {
+            //区分値チェック
+            if( new Check_DayDivision(myDayDivision).isNotEnabled() ){
+                throw new RuntimeException( "This Object is not enabled." );
+            }
+        }
 
     //補足説明めそっど
     public final String description(){

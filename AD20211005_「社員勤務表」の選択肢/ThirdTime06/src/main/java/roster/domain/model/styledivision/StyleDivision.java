@@ -1,8 +1,7 @@
-package roster.domain.model;
+package roster.domain.model.styledivision;
 
 public enum StyleDivision {
-    TELEWORK
+      TELEWORK
     , PHYSICAL_WORK
     , NON_WORK
-    ;
 }

@@ -1,4 +1,4 @@
-package roster.domain.model;
+package roster.domain.model.daydivision;
 
 public enum DayDivision {
       WORKING
@@ -8,14 +8,14 @@ public enum DayDivision {
     public final String explanation(){
         if( this.name().equals(DayDivision.WORKING.name()) )
             { return
-                    "It refers to the state of doing some work during the day." +
-                            " Also includes telework."
+                      "It refers to the state of doing some work during the day."
+                    + " Also includes telework."
             ;}
 
         if( this.name().equals(DayDivision.NON_WORKING.name()) )
             { return
-                    "It means that you are not working all day." +
-                            "Includes weekends and holidays."
+                      "It means that you are not working all day."
+                    + "Includes weekends and holidays."
             ;}
 
         else

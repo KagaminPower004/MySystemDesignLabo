@@ -1,8 +1,9 @@
 package roster.domain.anticorruption.workdivision;
 
-import roster.domain.model.WorkDivision;
-import roster.domain.support.WorkDivisionCheck;
+import roster.domain.model.workdivision.WorkDivision;
+import roster.domain.model.workdivision.Check_WorkDivision;
 
+//独語にしちゃいました。。。的な^^;
 enum WorkDivisionAdapter implements WorkDivisionInterface {
       VOLL_ZEIT_ARBEIT   ( WorkDivision.FULL_TIME_WORK)
     , NACHMITTAG_ARBEIT  ( WorkDivision.AFTERNOON_WORK )
@@ -14,7 +15,7 @@ enum WorkDivisionAdapter implements WorkDivisionInterface {
 
     WorkDivisionAdapter(final WorkDivision myWorkDivision){
         //区分値チェック
-        if( new WorkDivisionCheck(myWorkDivision).isNotAvailable() ){
+        if( new Check_WorkDivision(myWorkDivision).isNotEnabled() ){
             throw new RuntimeException( "This Object is not available." );
         }
     }

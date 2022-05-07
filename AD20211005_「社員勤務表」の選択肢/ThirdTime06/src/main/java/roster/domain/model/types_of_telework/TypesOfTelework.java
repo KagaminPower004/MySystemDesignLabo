@@ -1,4 +1,4 @@
-package roster.domain.model;
+package roster.domain.model.types_of_telework;
 
 public enum TypesOfTelework {
      在宅勤務
@@ -6,5 +6,4 @@ public enum TypesOfTelework {
     ,サテライトオフィス勤務
     ,テレハーフ
     ,テレワーク_時間単位
-    ;
 }

@@ -1,4 +1,4 @@
-package roster.domain.model;
+package roster.domain.model.officedivision;
 
 public enum OfficeDivision {
       OUTSIDE
@@ -8,14 +8,13 @@ public enum OfficeDivision {
     public final String comments(){
         if( this.name().equals(OfficeDivision.OUTSIDE.name()) )
             { return
-                    "It refers to the state of working outside the company" +
-                            " and doing some work during the day."
+                    "It refers to the state of working outside the company."
             ;}
 
         if( this.name().equals(OfficeDivision.INSIDE.name()) )
             { return
-                    "It refers to the state of doing some work during the day." +
-                            " However, telework is not included."
+                      "It refers to the state of working inside the company."
+                    + " However, telework is not included."
             ;}
 
         else

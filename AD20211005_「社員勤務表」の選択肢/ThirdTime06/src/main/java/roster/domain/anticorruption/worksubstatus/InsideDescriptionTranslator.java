@@ -1,6 +1,6 @@
 package roster.domain.anticorruption.worksubstatus;
 
-import roster.domain.model.OfficeDivision;
+import roster.domain.model.officedivision.OfficeDivision;
 
 class InsideDescriptionTranslator {
 
