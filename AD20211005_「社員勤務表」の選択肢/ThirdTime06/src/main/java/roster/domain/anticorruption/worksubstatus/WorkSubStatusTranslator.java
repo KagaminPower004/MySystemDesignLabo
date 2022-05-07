@@ -9,34 +9,50 @@ class WorkSubStatusTranslator {
     final private WorkSubStatusAdapter myWorkSubStatusAdapter;
     final private InsideDescriptionTranslator myInsideDescriptionTranslator
             = new InsideDescriptionTranslator();
+    final private String myDescription;
 
     WorkSubStatusTranslator(WorkSubStatusAdapter myWorkSubStatusAdapter){
         this.myWorkSubStatusAdapter = myWorkSubStatusAdapter;
+
+        //区分値ごとに振り分け
+        //Enumのswitch:
+        // defaultを排すると、全網羅しないとエラーになってくれるらしい。
+        String myDescription = "";
+        switch (myWorkSubStatusAdapter) {
+            case INSIDE ->
+                    myDescription = myInsideDescriptionTranslator.done(); //長文なので外だし
+
+            case OUTSIDE ->
+                    myDescription = OfficeDivision.OUTSIDE.comments(); //モデルそのまま
+
+            case WORKING ->
+                    myDescription = DayDivision.WORKING.explanation(); //モデルそのまま
+
+            case NON_WORKING ->
+                    myDescription = DayDivision.NON_WORKING.explanation(); //モデルそのまま
+
+            case INDOOR ->
+                    myDescription = TypeDivision.INDOOR.detailDescription(); //モデルそのまま
+
+            case OUTDOOR ->
+                    myDescription = TypeDivision.OUTDOOR.detailDescription(); //モデルそのまま
+
+            case NON_DOMESTIC ->
+                    myDescription = "okay" ; //暫定値
+        };
+
+        //なんかミュータブルだけど、とりま未初期化エラー消えたんでOK！
+        this.myDescription = myDescription;
     }
 
     final String description(){
-
-        //Enumのswitch:
-        // defaultを排すると、全網羅しないとエラーになってくれるらしい。
-        final String myDescription =
-        switch (myWorkSubStatusAdapter) {
-            case INSIDE  -> myInsideDescriptionTranslator.done(); //長文なので外だし
-            case OUTSIDE -> OfficeDivision.OUTSIDE.comments();
-            case WORKING     -> DayDivision.WORKING.explanation();
-            case NON_WORKING -> DayDivision.NON_WORKING.explanation();
-            case INDOOR -> TypeDivision.INDOOR.detailDescription();
-            case OUTDOOR -> TypeDivision.OUTDOOR.detailDescription();
-            case NON_DOMESTIC -> "okay" ;
-         };
-
         //念のため、例外キャッチアップ
         if(myDescription.isEmpty()){
             throw new RuntimeException(
-                      "補足説明の記述がございません。"
-                    + "[区分値:" + myWorkSubStatusAdapter.name() + "]"
+                      "There is no description of sentence."
+                    + "[Division value:" + myWorkSubStatusAdapter.name() + "]"
             );
         }
-
         return myDescription;
     }
 }
