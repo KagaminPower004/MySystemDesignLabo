@@ -7,7 +7,7 @@ import roster.domain.model.typedivision.TypeDivision;
 import roster.domain.model.daydivision.Check_DayDivision;
 import roster.domain.model.daydivision.DayDivision;
 
-enum WorkSubStatusAdapter implements WorkSubStatusInterface {
+enum MultiAdapter_WorkSubStatus implements Interface_WorkSubStatus {
       INSIDE      ( OfficeDivision.INSIDE )
     , OUTSIDE     ( OfficeDivision.OUTSIDE )
     , WORKING     ( DayDivision.WORKING )
@@ -18,9 +18,9 @@ enum WorkSubStatusAdapter implements WorkSubStatusInterface {
     ;
 
     //コンストラクターらっしゅ！！
-    WorkSubStatusAdapter(){  }
+    MultiAdapter_WorkSubStatus(){  }
 
-    WorkSubStatusAdapter(OfficeDivision myOfficeDivision )
+    MultiAdapter_WorkSubStatus(OfficeDivision myOfficeDivision )
         {
             //区分値チェック
             if( new Check_OfficeDivision(myOfficeDivision).isNotEnabled() ){
@@ -28,7 +28,7 @@ enum WorkSubStatusAdapter implements WorkSubStatusInterface {
             }
         }
 
-    WorkSubStatusAdapter(TypeDivision   myTypeDivision )
+    MultiAdapter_WorkSubStatus(TypeDivision   myTypeDivision )
         {
             //区分値チェック
             if( new Check_TypeDivision(myTypeDivision).isNotEnabled() ){
@@ -36,7 +36,7 @@ enum WorkSubStatusAdapter implements WorkSubStatusInterface {
             }
         }
 
-    WorkSubStatusAdapter(DayDivision    myDayDivision )
+    MultiAdapter_WorkSubStatus(DayDivision    myDayDivision )
         {
             //区分値チェック
             if( new Check_DayDivision(myDayDivision).isNotEnabled() ){
@@ -50,7 +50,7 @@ enum WorkSubStatusAdapter implements WorkSubStatusInterface {
         //まとりょーしか!!
         //   『トランスレーター』へ変換を依頼
         return new
-                WorkSubStatusTranslator(this)
+                Translator_WorkSubStatus(this)
                 .description();
     }
 }

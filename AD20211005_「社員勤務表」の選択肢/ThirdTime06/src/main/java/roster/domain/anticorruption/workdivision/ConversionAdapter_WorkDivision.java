@@ -4,7 +4,7 @@ import roster.domain.model.workdivision.WorkDivision;
 import roster.domain.model.workdivision.Check_WorkDivision;
 
 //独語にしちゃいました。。。的な^^;
-enum WorkDivisionAdapter implements WorkDivisionInterface {
+enum ConversionAdapter_WorkDivision implements Interface_WorkDivision {
       VOLL_ZEIT_ARBEIT   ( WorkDivision.FULL_TIME_WORK)
     , NACHMITTAG_ARBEIT  ( WorkDivision.AFTERNOON_WORK )
     , MORGEN_ARBEIT      ( WorkDivision.MORNING_WORK )
@@ -13,7 +13,7 @@ enum WorkDivisionAdapter implements WorkDivisionInterface {
     , ABWESENHEIT        ( WorkDivision.ABSENCE )
     ;
 
-    WorkDivisionAdapter(final WorkDivision myWorkDivision){
+    ConversionAdapter_WorkDivision(final WorkDivision myWorkDivision){
         //区分値チェック
         if( new Check_WorkDivision(myWorkDivision).isNotEnabled() ){
             throw new RuntimeException( "This Object is not available." );

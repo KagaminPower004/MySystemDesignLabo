@@ -3,11 +3,11 @@ package roster.domain.anticorruption.worksubstatus;
 import roster.domain.model.styledivision.Check_StyleDivision;
 import roster.domain.model.styledivision.StyleDivision;
 
-public class Check_WorkSubStatusService {
+public class Check_WorkSubStatus {
 
     private final String myStyle;
 
-    public Check_WorkSubStatusService(String myStyle)
+    public Check_WorkSubStatus(String myStyle)
         {
             //区分値チェック
             if( new Check_StyleDivision(StyleDivision.valueOf(myStyle)).isNotEnabled() )

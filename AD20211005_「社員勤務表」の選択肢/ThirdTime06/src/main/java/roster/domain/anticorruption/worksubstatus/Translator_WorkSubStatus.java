@@ -4,18 +4,18 @@ import roster.domain.model.typedivision.TypeDivision;
 import roster.domain.model.daydivision.DayDivision;
 import roster.domain.model.officedivision.OfficeDivision;
 
-class WorkSubStatusTranslator {
-    final private WorkSubStatusAdapter           myWorkSubStatusAdapter;
+class Translator_WorkSubStatus {
+    final private MultiAdapter_WorkSubStatus myWorkSubStatusAdapter;
     final private String                         myDescription;
 
-    WorkSubStatusTranslator(WorkSubStatusAdapter myWorkSubStatusAdapter){
+    Translator_WorkSubStatus(MultiAdapter_WorkSubStatus myWorkSubStatusAdapter){
         this.myWorkSubStatusAdapter = myWorkSubStatusAdapter;
 
         //区分値ごとに振り分け
         //Enumのswitch:
         //    defaultを排すると、全網羅しないとエラーになってくれるらしい。
         String myDescription = "";
-        InsideDescriptionTranslator myInsideDescriptionTranslator = new InsideDescriptionTranslator();
+        Translator_InsideDescription myInsideDescriptionTranslator = new Translator_InsideDescription();
         switch (this.myWorkSubStatusAdapter) {
             case INSIDE ->
                     myDescription = myInsideDescriptionTranslator.done(); //長文なので外だし

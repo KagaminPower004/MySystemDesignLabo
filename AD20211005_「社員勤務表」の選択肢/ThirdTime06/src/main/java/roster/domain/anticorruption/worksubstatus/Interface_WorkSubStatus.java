@@ -1,6 +1,6 @@
 package roster.domain.anticorruption.worksubstatus;
 
-public interface WorkSubStatusInterface {
+public interface Interface_WorkSubStatus {
     String name();
     String description();
 }

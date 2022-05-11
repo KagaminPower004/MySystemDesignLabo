@@ -1,8 +1,8 @@
 package roster.domain.support.tool;
 
-import roster.domain.anticorruption.worksubstatus.WorkSubStatusInterface;
+import roster.domain.anticorruption.worksubstatus.Interface_WorkSubStatus;
 
-public class SeparatorLine implements WorkSubStatusInterface {
+public class SeparatorLine implements Interface_WorkSubStatus {
     private final String SeparatorLine = "---------------OR---------------";
 
     public SeparatorLine(){}

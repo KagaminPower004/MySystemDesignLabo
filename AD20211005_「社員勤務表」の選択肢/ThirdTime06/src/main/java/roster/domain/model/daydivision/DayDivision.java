@@ -8,7 +8,7 @@ public enum DayDivision {
     public final String explanation(){
         if( this.name().equals(DayDivision.WORKING.name()) )
             { return
-                      "It refers to the state of doing some work during the day."
+                      "It refers to the state of doing some work."
                     + " Also includes telework."
             ;}
 
