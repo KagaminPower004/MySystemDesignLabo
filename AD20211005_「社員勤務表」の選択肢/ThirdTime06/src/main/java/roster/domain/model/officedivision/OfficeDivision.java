@@ -1,9 +1,13 @@
 package roster.domain.model.officedivision;
 
+import roster.domain.support.tool.NewLine;
+
 public enum OfficeDivision {
       OUTSIDE
     , INSIDE
     ;
+
+    private final String myOneOfNewLine = new NewLine().executed();
 
     public final String comments(){
         if( this.name().equals(OfficeDivision.OUTSIDE.name()) )
@@ -14,7 +18,8 @@ public enum OfficeDivision {
         if( this.name().equals(OfficeDivision.INSIDE.name()) )
             { return
                       "It refers to the state of working inside the company."
-                    + " However, telework is not included."
+                    + myOneOfNewLine
+                    + "However, telework is not included."
             ;}
 
         else

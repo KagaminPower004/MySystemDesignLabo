@@ -25,20 +25,22 @@ public class AnswerService_WorkSubStatusDescription {
 
     public final String answer_WorkSubStatusDescription(){
 
-        final String myAnswer_the_first_part = "If the workstyle is " + myOneOfNewLine;
+        final String myAnswer_the_first_part = "If the " + myStyle + " is " + myOneOfNewLine;
 
         StringBuilder myAnswer_the_main_part_work = new StringBuilder();
-        for (Interface_WorkSubStatus myWorkSubStatusDescription :
-                this.myWorkSubStatusDescription_List()) {
+        for (Interface_WorkSubStatus myWorkSubStatusDescription :this.myWorkSubStatusDescription_List())
+        {
             myAnswer_the_main_part_work
                     .append("  ●").append(myWorkSubStatusDescription.name()).append(":")
                     .append(myOneOfNewLine)
-                    .append("    ⇒").append(myWorkSubStatusDescription.description())
+                    .append("    ⇒")
+                    .append(myWorkSubStatusDescription.description()
+                            .replace(myOneOfNewLine,myOneOfNewLine + "      "))
                     .append(myOneOfNewLine);
         }
         final String myAnswer_the_main_part = myAnswer_the_main_part_work.toString();
 
-        final String myAnswer_the_last_part =  "." + myOneOfNewLine;
+        final String myAnswer_the_last_part =  "" + myOneOfNewLine;
 
         return myAnswer_the_first_part
                 + myAnswer_the_main_part

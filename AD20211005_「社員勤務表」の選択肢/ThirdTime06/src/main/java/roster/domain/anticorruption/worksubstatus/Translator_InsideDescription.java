@@ -9,9 +9,9 @@ class Translator_InsideDescription {
     Translator_InsideDescription(){ }
 
      final String done(){
-        final String front = "<!!caution!!::Not Telework!!>    ";
-        final String main  = OfficeDivision.INSIDE.comments();
-        final String rear  = "    Is it OK?";
+        final String front = "<!!caution!!::Not Telework!!>"  + myOneOfNewLine;
+        final String main  = OfficeDivision.INSIDE.comments() + myOneOfNewLine;
+        final String rear  = "Is it OK?";
 
         return (front + main + rear);
     }
