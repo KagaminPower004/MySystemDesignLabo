@@ -17,8 +17,8 @@ public class AnswerService_WorkDivision {
     public AnswerService_WorkDivision(final String myStyle)
         {
             //引数チェック
-            final Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
-            if(myStyleName.isNG())  { System.out.println("This value does not exist."); }
+            final Check_WorkSubStatus myCheckedStyle = new Check_WorkSubStatus(myStyle);
+            if(myCheckedStyle.isNG())  { System.out.println("This value does not exist."); }
 
             //フィールドセット
             this.myStyle = myStyle;
@@ -46,11 +46,11 @@ public class AnswerService_WorkDivision {
 
     public final List<Interface_WorkDivision> workDivision_list()
         {
-            final Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
+            final Check_WorkSubStatus myCheckedStyle = new Check_WorkSubStatus(myStyle);
 
-            if(myStyleName.isTelework())            { return teleworkSettings(); }
-            if(myStyleName.isPhysical_Work())       { return physical_workSettings(); }
-            if(myStyleName.isNon_Work())            { return non_workSettings(); }
+            if(myCheckedStyle.isTelework())            { return teleworkSettings(); }
+            if(myCheckedStyle.isPhysical_Work())       { return physical_workSettings(); }
+            if(myCheckedStyle.isNon_Work())            { return non_workSettings(); }
             else                                    { myWorkDivision_List.clear(); }
 
             return  Collections.unmodifiableList(myWorkDivision_List);
