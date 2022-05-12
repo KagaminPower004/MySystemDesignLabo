@@ -51,7 +51,7 @@ public class AnswerService_WorkDivision {
             if(myCheckedStyle.isTelework())            { return teleworkSettings(); }
             if(myCheckedStyle.isPhysical_Work())       { return physical_workSettings(); }
             if(myCheckedStyle.isNon_Work())            { return non_workSettings(); }
-            else                                    { myWorkDivision_List.clear(); }
+            else                                       { myWorkDivision_List.clear(); }
 
             return  Collections.unmodifiableList(myWorkDivision_List);
         }
