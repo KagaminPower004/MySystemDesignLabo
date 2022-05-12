@@ -20,7 +20,7 @@ enum MultiAdapter_WorkSubStatus implements Interface_WorkSubStatus {
     //コンストラクターらっしゅ！！
     MultiAdapter_WorkSubStatus(){  }
 
-    MultiAdapter_WorkSubStatus(OfficeDivision myOfficeDivision )
+    MultiAdapter_WorkSubStatus(final OfficeDivision myOfficeDivision )
         {
             //区分値チェック
             if( new Check_OfficeDivision(myOfficeDivision).isNotEnabled() ){
@@ -28,7 +28,7 @@ enum MultiAdapter_WorkSubStatus implements Interface_WorkSubStatus {
             }
         }
 
-    MultiAdapter_WorkSubStatus(TypeDivision   myTypeDivision )
+    MultiAdapter_WorkSubStatus(final TypeDivision myTypeDivision )
         {
             //区分値チェック
             if( new Check_TypeDivision(myTypeDivision).isNotEnabled() ){
@@ -36,7 +36,7 @@ enum MultiAdapter_WorkSubStatus implements Interface_WorkSubStatus {
             }
         }
 
-    MultiAdapter_WorkSubStatus(DayDivision    myDayDivision )
+    MultiAdapter_WorkSubStatus(final DayDivision myDayDivision )
         {
             //区分値チェック
             if( new Check_DayDivision(myDayDivision).isNotEnabled() ){

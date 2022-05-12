@@ -7,7 +7,7 @@ public class Check_WorkSubStatus {
 
     private final String myStyle;
 
-    public Check_WorkSubStatus(String myStyle)
+    public Check_WorkSubStatus(final String myStyle)
         {
             //区分値チェック
             if( new Check_StyleDivision(StyleDivision.valueOf(myStyle)).isNotEnabled() )
@@ -17,7 +17,7 @@ public class Check_WorkSubStatus {
             this.myStyle = myStyle;
         }
 
-    public Boolean isNG(){
+    public final Boolean isNG(){
         try {
             StyleDivision.valueOf(myStyle);
 
@@ -31,15 +31,15 @@ public class Check_WorkSubStatus {
         }
     }
 
-    public Boolean isTelework(){
+    public final Boolean isTelework(){
         return myStyle.equals(StyleDivision.TELEWORK.name());
     }
 
-    public Boolean isPhysical_Work(){
+    public final Boolean isPhysical_Work(){
         return myStyle.equals(StyleDivision.PHYSICAL_WORK.name());
     }
 
-    public Boolean isNon_Work(){
+    public final Boolean isNon_Work(){
         return myStyle.equals(StyleDivision.NON_WORK.name());
     }
 }

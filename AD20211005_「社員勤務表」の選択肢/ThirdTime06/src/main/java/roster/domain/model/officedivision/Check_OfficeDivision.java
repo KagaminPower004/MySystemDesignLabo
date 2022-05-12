@@ -6,15 +6,15 @@ public class Check_OfficeDivision {
 
     final private OfficeDivision myOfficeDivision;
 
-    public Check_OfficeDivision(OfficeDivision myOfficeDivision){ this.myOfficeDivision = myOfficeDivision; }
+    public Check_OfficeDivision(final OfficeDivision myOfficeDivision){ this.myOfficeDivision = myOfficeDivision; }
 
-    public Boolean isEnabled(){
+    public final Boolean isEnabled(){
         // まとりょーしか!!
         return new Check_Enabled_Object(myOfficeDivision)
                 .isEnabled();
     }
 
-    public Boolean isNotEnabled(){
+    public final Boolean isNotEnabled(){
         return !this.isEnabled();
     }
 }

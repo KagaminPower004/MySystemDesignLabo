@@ -6,41 +6,41 @@ import roster.domain.model.officedivision.OfficeDivision;
 
 class Translator_WorkSubStatus {
     final private MultiAdapter_WorkSubStatus myWorkSubStatusAdapter;
-    final private String                         myDescription;
+    final private String                     myDescription;
 
-    Translator_WorkSubStatus(MultiAdapter_WorkSubStatus myWorkSubStatusAdapter){
+    Translator_WorkSubStatus(final MultiAdapter_WorkSubStatus myWorkSubStatusAdapter){
         this.myWorkSubStatusAdapter = myWorkSubStatusAdapter;
 
         //区分値ごとに振り分け
         //Enumのswitch:
         //    defaultを排すると、全網羅しないとエラーになってくれるらしい。
-        String myDescription = "";
-        Translator_InsideDescription myInsideDescriptionTranslator = new Translator_InsideDescription();
+        String myWorkingDescription = "";
+        Translator_InsideDescription myTranslatedInsideDescription = new Translator_InsideDescription();
         switch (this.myWorkSubStatusAdapter) {
             case INSIDE ->
-                    myDescription = myInsideDescriptionTranslator.done(); //長文なので外だし
+                    myWorkingDescription = myTranslatedInsideDescription.done(); //長文なので外だし
 
             case OUTSIDE ->
-                    myDescription = OfficeDivision.OUTSIDE.comments(); //モデルそのまま
+                    myWorkingDescription = OfficeDivision.OUTSIDE.comments(); //モデルそのまま
 
             case WORKING ->
-                    myDescription = DayDivision.WORKING.explanation(); //モデルそのまま
+                    myWorkingDescription = DayDivision.WORKING.explanation(); //モデルそのまま
 
             case NON_WORKING ->
-                    myDescription = DayDivision.NON_WORKING.explanation(); //モデルそのまま
+                    myWorkingDescription = DayDivision.NON_WORKING.explanation(); //モデルそのまま
 
             case INDOOR ->
-                    myDescription = TypeDivision.INDOOR.detailDescription(); //モデルそのまま
+                    myWorkingDescription = TypeDivision.INDOOR.detailDescription(); //モデルそのまま
 
             case OUTDOOR ->
-                    myDescription = TypeDivision.OUTDOOR.detailDescription(); //モデルそのまま
+                    myWorkingDescription = TypeDivision.OUTDOOR.detailDescription(); //モデルそのまま
 
             case NON_DOMESTIC ->
-                    myDescription = "okay" ; //暫定値
+                    myWorkingDescription = "okay" ; //暫定値
         }
 
         //なんかミュータブルだけど、とりま未初期化エラー消えたんでOK！
-        this.myDescription = myDescription;
+        this.myDescription = myWorkingDescription;
     }
 
     final String description(){

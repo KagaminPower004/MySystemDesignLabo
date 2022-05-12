@@ -7,6 +7,6 @@ public class SeparatorLine implements Interface_WorkSubStatus {
 
     public SeparatorLine(){}
 
-    public String name()        { return this.SeparatorLine; }
-    public String description() { return this.SeparatorLine; }
+    public final String name()        { return this.SeparatorLine; }
+    public final String description() { return this.SeparatorLine; }
 }

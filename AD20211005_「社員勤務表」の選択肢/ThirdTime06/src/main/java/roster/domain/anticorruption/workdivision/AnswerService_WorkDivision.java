@@ -10,13 +10,14 @@ import java.util.Collections;
 public class AnswerService_WorkDivision {
 
     private final String myStyle;
-    private final List<Interface_WorkDivision> myWorkDivision_List = new ArrayList<>();
+    private final List<Interface_WorkDivision>
+                    myWorkDivision_List = new ArrayList<>();
     private final String myOneOfNewLine = new NewLine().executed();
 
     public AnswerService_WorkDivision(final String myStyle)
         {
             //引数チェック
-            Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
+            final Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
             if(myStyleName.isNG())  { System.out.println("This value does not exist."); }
 
             //フィールドセット
@@ -28,8 +29,8 @@ public class AnswerService_WorkDivision {
         final String myAnswer_the_first_part
                 =  "If the workstyle is " + myStyle + ", the corresponding [work_division] is" + myOneOfNewLine;
 
-        StringBuilder myAnswer_the_main_part_work = new StringBuilder();
-        for (Interface_WorkDivision myWorkDivision : this.workDivision_list()) {
+        final StringBuilder myAnswer_the_main_part_work = new StringBuilder();
+        for (final Interface_WorkDivision myWorkDivision : this.workDivision_list()) {
             myAnswer_the_main_part_work
                     .append("  ●").append(myWorkDivision.name())
                     .append(myOneOfNewLine);
@@ -45,7 +46,7 @@ public class AnswerService_WorkDivision {
 
     public final List<Interface_WorkDivision> workDivision_list()
         {
-            Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
+            final Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
 
             if(myStyleName.isTelework())            { return teleworkSettings(); }
             if(myStyleName.isPhysical_Work())       { return physical_workSettings(); }

@@ -16,7 +16,7 @@ enum ConversionAdapter_WorkDivision implements Interface_WorkDivision {
     ConversionAdapter_WorkDivision(final WorkDivision myWorkDivision){
         //区分値チェック
         if( new Check_WorkDivision(myWorkDivision).isNotEnabled() ){
-            throw new RuntimeException( "This Object is not available." );
+            throw new RuntimeException( "This Object is not enabled." );
         }
     }
 

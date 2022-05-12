@@ -9,15 +9,15 @@ import java.util.List;
 public class AnswerService_WorkSubStatusDescription {
 
     private final String myStyle ;
-    private final List<Interface_WorkSubStatus> myWorkSubStatusDescription_List
-            = new ArrayList<>();
-    private final String myOneOfNewLine = new NewLine().executed();
+    private final List<Interface_WorkSubStatus>
+            myWorkSubStatusDescription_List = new ArrayList<>();
+    private final String myOneOfNewLine     = new NewLine().executed();
 
     public AnswerService_WorkSubStatusDescription(final String myStyle)
         {
             //引数チェック
-            Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
-            if(myStyleName.isNG())  { System.out.println("This value does not exist."); }
+            final Check_WorkSubStatus myCheckedStyle = new Check_WorkSubStatus(myStyle);
+            if(myCheckedStyle.isNG())  { System.out.println("This value does not exist."); }
 
             //フィールドセット
             this.myStyle = myStyle;
@@ -27,8 +27,8 @@ public class AnswerService_WorkSubStatusDescription {
 
         final String myAnswer_the_first_part = "If the " + myStyle + " is " + myOneOfNewLine;
 
-        StringBuilder myAnswer_the_main_part_work = new StringBuilder();
-        for (Interface_WorkSubStatus myWorkSubStatusDescription :this.myWorkSubStatusDescription_List())
+        final StringBuilder myAnswer_the_main_part_work = new StringBuilder();
+        for (final Interface_WorkSubStatus myWorkSubStatusDescription :this.myWorkSubStatusDescription_List())
         {
             myAnswer_the_main_part_work
                     .append("  ●").append(myWorkSubStatusDescription.name()).append(":")
@@ -47,14 +47,14 @@ public class AnswerService_WorkSubStatusDescription {
                 + myAnswer_the_last_part ;
     }
 
-    public List<Interface_WorkSubStatus> myWorkSubStatusDescription_List()
+    public final List<Interface_WorkSubStatus> myWorkSubStatusDescription_List()
         {
-            Check_WorkSubStatus myStyleName = new Check_WorkSubStatus(myStyle);
+            Check_WorkSubStatus myCheckedStyle = new Check_WorkSubStatus(myStyle);
 
-            if(myStyleName.isTelework())         { return teleworkSettings(); }
-            if(myStyleName.isPhysical_Work())    { return physical_workSettings(); }
-            if(myStyleName.isNon_Work())         { return non_workSettings(); }
-            else                                 { myWorkSubStatusDescription_List.clear(); }
+            if(myCheckedStyle.isTelework())         { return teleworkSettings(); }
+            if(myCheckedStyle.isPhysical_Work())    { return physical_workSettings(); }
+            if(myCheckedStyle.isNon_Work())         { return non_workSettings(); }
+            else                                    { myWorkSubStatusDescription_List.clear(); }
 
             return  Collections.unmodifiableList(myWorkSubStatusDescription_List);
         }
