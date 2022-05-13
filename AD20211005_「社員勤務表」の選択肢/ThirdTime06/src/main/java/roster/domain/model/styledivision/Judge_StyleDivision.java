@@ -1,10 +1,10 @@
 package roster.domain.model.styledivision;
 
-public class Judge_Style {
+public class Judge_StyleDivision {
 
     private final String myStyle;
 
-    public Judge_Style(final String myStyle)
+    public Judge_StyleDivision(final String myStyle)
         {
             //区分値チェック
             if( new Check_StyleDivision(StyleDivision.valueOf(myStyle)).isNotEnabled() )
