@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AnswerService_WorkAttendanceSubStatusDescription {
+public class AnswerService_DescriptionOfWorkAttendanceSubStatus {
 
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceSubStatus>
-                myWorkAttendanceSubStatusDescription_List = new ArrayList<>();
+                myDescriptionOfWorkAttendanceSubStatus_List = new ArrayList<>();
     private static final String myOneOfNewLine     = new NewLine().executed();
 
-    public AnswerService_WorkAttendanceSubStatusDescription(final String myWorkStyle)
+    public AnswerService_DescriptionOfWorkAttendanceSubStatus(final String myWorkStyle)
         {
             //引数チェック
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
@@ -55,33 +55,33 @@ public class AnswerService_WorkAttendanceSubStatusDescription {
             if(myJudgedWorkStyle.isTelework())         { return teleworkSettings(); }
             if(myJudgedWorkStyle.isPhysical_Work())    { return physical_workSettings(); }
             if(myJudgedWorkStyle.isNon_Work())         { return non_workSettings(); }
-            else                                       { myWorkAttendanceSubStatusDescription_List.clear(); }
+            else                                       { myDescriptionOfWorkAttendanceSubStatus_List.clear(); }
 
-            return  Collections.unmodifiableList(myWorkAttendanceSubStatusDescription_List);
+            return  Collections.unmodifiableList(myDescriptionOfWorkAttendanceSubStatus_List);
         }
 
     private List<Interface_WorkAttendanceSubStatus> teleworkSettings()
         {
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.WORKING );
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTSIDE );
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.INDOOR);
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.WORKING );
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTSIDE );
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.INDOOR);
 
-            return Collections.unmodifiableList(myWorkAttendanceSubStatusDescription_List);
+            return Collections.unmodifiableList(myDescriptionOfWorkAttendanceSubStatus_List);
         }
     private List<Interface_WorkAttendanceSubStatus> physical_workSettings()
         {
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.WORKING );
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.INSIDE );
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTSIDE );
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.INDOOR);
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTDOOR);
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.WORKING );
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.INSIDE );
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTSIDE );
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.INDOOR);
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTDOOR);
 
-            return Collections.unmodifiableList(myWorkAttendanceSubStatusDescription_List);
+            return Collections.unmodifiableList(myDescriptionOfWorkAttendanceSubStatus_List);
         }
     private List<Interface_WorkAttendanceSubStatus> non_workSettings()
         {
-            myWorkAttendanceSubStatusDescription_List.add( MultiAdapter_WorkAttendanceSubStatus.NON_WORKING);
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.NON_WORKING);
 
-            return Collections.unmodifiableList(myWorkAttendanceSubStatusDescription_List);
+            return Collections.unmodifiableList(myDescriptionOfWorkAttendanceSubStatus_List);
         }
 }
