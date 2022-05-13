@@ -16,7 +16,7 @@ class Translator_WorkAttendanceSubStatus {
         //Enumのswitch:
         //    defaultを排すると、全網羅しないとエラーになってくれるらしい。
         String myWorkingDescription = "";
-        Translator_InsideDescription myTranslatedInsideDescription = new Translator_InsideDescription();
+        final Translator_InsideDescription myTranslatedInsideDescription = new Translator_InsideDescription();
         switch (this.myAdapter) {
             case INSIDE ->
                     myWorkingDescription = myTranslatedInsideDescription.done(); //長文なので外だし
