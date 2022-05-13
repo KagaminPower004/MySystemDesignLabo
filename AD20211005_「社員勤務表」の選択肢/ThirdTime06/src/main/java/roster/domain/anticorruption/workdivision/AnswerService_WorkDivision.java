@@ -1,6 +1,6 @@
 package roster.domain.anticorruption.workdivision;
 
-import roster.domain.anticorruption.worksubstatus.Check_WorkSubStatus;
+import roster.domain.model.styledivision.Judge_Style;
 import roster.domain.support.tool.NewLine;
 
 import java.util.List;
@@ -17,8 +17,8 @@ public class AnswerService_WorkDivision {
     public AnswerService_WorkDivision(final String myStyle)
         {
             //引数チェック
-            final Check_WorkSubStatus myCheckedStyle = new Check_WorkSubStatus(myStyle);
-            if(myCheckedStyle.isNG())  { System.out.println("This value does not exist."); }
+            final Judge_Style myJudgedStyle = new Judge_Style(myStyle);
+            if(myJudgedStyle.isNG())  { System.out.println("This value does not exist."); }
 
             //フィールドセット
             this.myStyle = myStyle;
@@ -46,11 +46,11 @@ public class AnswerService_WorkDivision {
 
     public final List<Interface_WorkDivision> workDivision_list()
         {
-            final Check_WorkSubStatus myCheckedStyle = new Check_WorkSubStatus(myStyle);
+            final Judge_Style myJudgedStyle = new Judge_Style(myStyle);
 
-            if(myCheckedStyle.isTelework())            { return teleworkSettings(); }
-            if(myCheckedStyle.isPhysical_Work())       { return physical_workSettings(); }
-            if(myCheckedStyle.isNon_Work())            { return non_workSettings(); }
+            if(myJudgedStyle.isTelework())            { return teleworkSettings(); }
+            if(myJudgedStyle.isPhysical_Work())       { return physical_workSettings(); }
+            if(myJudgedStyle.isNon_Work())            { return non_workSettings(); }
             else                                       { myWorkDivision_List.clear(); }
 
             return  Collections.unmodifiableList(myWorkDivision_List);

@@ -1,13 +1,10 @@
-package roster.domain.anticorruption.worksubstatus;
+package roster.domain.model.styledivision;
 
-import roster.domain.model.styledivision.Check_StyleDivision;
-import roster.domain.model.styledivision.StyleDivision;
-
-public class Check_WorkSubStatus {
+public class Judge_Style {
 
     private final String myStyle;
 
-    public Check_WorkSubStatus(final String myStyle)
+    public Judge_Style(final String myStyle)
         {
             //区分値チェック
             if( new Check_StyleDivision(StyleDivision.valueOf(myStyle)).isNotEnabled() )
