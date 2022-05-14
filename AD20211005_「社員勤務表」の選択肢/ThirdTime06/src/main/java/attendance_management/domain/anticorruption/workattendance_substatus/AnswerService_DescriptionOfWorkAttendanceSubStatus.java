@@ -1,7 +1,6 @@
 package attendance_management.domain.anticorruption.workattendance_substatus;
 
 import attendance_management.domain.model.workstyle_division.Judge_WorkStyleDivision;
-import attendance_management.domain.support.tool.NewLine;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,41 +11,23 @@ public class AnswerService_DescriptionOfWorkAttendanceSubStatus {
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceSubStatus>
                 myDescriptionOfWorkAttendanceSubStatus_List = new ArrayList<>();
-    private static final String myOneOfNewLine     = new NewLine().executed();
 
     public AnswerService_DescriptionOfWorkAttendanceSubStatus(final String myWorkStyle)
         {
             //引数チェック
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
-            if(myJudgedWorkStyle.isNG())  { System.out.println("This value does not exist."); }
+            if(myJudgedWorkStyle.isNG())  { throw new RuntimeException( "This value does not exist." ); }
 
             //フィールドセット
             this.myWorkStyle = myWorkStyle;
         }
 
-    public final String makeAnswer(){
-
-        final String myAnswer_the_first_part = "If the " + myWorkStyle + " is " + myOneOfNewLine;
-
-        final StringBuilder myAnswer_the_main_part_work = new StringBuilder();
-        for (final Interface_WorkAttendanceSubStatus myWorkingDescription :this.createList())
+    public final String makeAnswer()
         {
-            myAnswer_the_main_part_work
-                    .append("  ●").append(myWorkingDescription.name()).append(":")
-                    .append(myOneOfNewLine)
-                    .append("    ⇒")
-                    .append(myWorkingDescription.description()
-                            .replace(myOneOfNewLine,myOneOfNewLine + "      "))
-                    .append(myOneOfNewLine);
+            //まとりょーしか!！
+            return new CreationService_AnswerOfDescriptionOfWorkAttendanceSubStatus(this.myWorkStyle)
+                    .makeAnswer();
         }
-        final String myAnswer_the_main_part = myAnswer_the_main_part_work.toString();
-
-        final String myAnswer_the_last_part =  "" + myOneOfNewLine;
-
-        return myAnswer_the_first_part
-                + myAnswer_the_main_part
-                + myAnswer_the_last_part ;
-    }
 
     public final List<Interface_WorkAttendanceSubStatus> createList()
         {
@@ -71,7 +52,7 @@ public class AnswerService_DescriptionOfWorkAttendanceSubStatus {
     private List<Interface_WorkAttendanceSubStatus> physical_workSettings()
         {
             myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.WORKING );
-            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.INSIDE );
+            myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.INSIDE);
             myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTSIDE );
             myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.INDOOR);
             myDescriptionOfWorkAttendanceSubStatus_List.add( MultiAdapter_WorkAttendanceSubStatus.OUTDOOR);

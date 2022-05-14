@@ -18,7 +18,7 @@ enum MultiAdapter_WorkAttendanceSubStatus implements Interface_WorkAttendanceSub
     ;
 
     //コンストラクターらっしゅ！！
-    MultiAdapter_WorkAttendanceSubStatus(){  }
+    MultiAdapter_WorkAttendanceSubStatus() {  }
 
     MultiAdapter_WorkAttendanceSubStatus(final WorkOfficeDivision myWorkOfficeDivision )
         {
@@ -44,13 +44,9 @@ enum MultiAdapter_WorkAttendanceSubStatus implements Interface_WorkAttendanceSub
             }
         }
 
-    //補足説明めそっど
-    public final String description(){
-
-        //まとりょーしか!!
-        //   『トランスレーター』へ変換を依頼
-        return new
-                Translator_WorkAttendanceSubStatus(this)
-                .description();
-    }
+    //補足説明めそっど:『トランスレーター』へ変換を依頼
+    public final String description() { return createTranslator().description(); }
+    //※単品ファクトリーww
+    private Translator_WorkAttendanceSubStatus createTranslator()
+        { return new Translator_WorkAttendanceSubStatus(this); }
 }

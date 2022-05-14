@@ -1,6 +1,7 @@
 package attendance_management.domain.anticorruption.workattendance_division.check_behavior;
 
-import attendance_management.domain.anticorruption.workattendance_division.AnswerService_WorkAttendanceDivision;
+import attendance_management.domain
+        .anticorruption.workattendance_division.AnswerService_WorkAttendanceDivision;
 
 class Actor_Worker {
     public static void main(final String[] args){
