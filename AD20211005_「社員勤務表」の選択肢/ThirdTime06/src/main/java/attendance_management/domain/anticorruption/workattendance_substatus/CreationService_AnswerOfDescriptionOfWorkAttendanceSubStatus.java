@@ -40,7 +40,7 @@ class CreationService_AnswerOfDescriptionOfWorkAttendanceSubStatus {
                 }
             final String myAnswer_the_main_part = myAnswer_the_main_part_work.toString();
 
-            final String myAnswer_the_last_part =  "" + myOneOfNewLine;
+            final String myAnswer_the_last_part =  "." + myOneOfNewLine;
 
             return myAnswer_the_first_part
                     + myAnswer_the_main_part

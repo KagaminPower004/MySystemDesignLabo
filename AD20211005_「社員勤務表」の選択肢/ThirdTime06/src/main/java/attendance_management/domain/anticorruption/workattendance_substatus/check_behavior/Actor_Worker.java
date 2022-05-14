@@ -4,13 +4,18 @@ import attendance_management.domain.anticorruption.workattendance_substatus
         .AnswerService_WorkAttendanceSubStatus;
 import attendance_management.domain.anticorruption.workattendance_substatus
         .AnswerService_DescriptionOfWorkAttendanceSubStatus;
+import attendance_management.domain.model.workstyle_division.WorkStyleDivision;
 
 public class Actor_Worker {
     public static void main(final String[] args){
-        final String myWorkStyle = args[0];
 
-        answerWorkAttendanceSubStatus(myWorkStyle);
-        answerDescriptionOfWorkAttendanceSubStatus(myWorkStyle);
+        //全パラメータ網羅 ※なぜ今まで気付けなかったのだろう。。。Orz
+        for(WorkStyleDivision myWorkingWorkStyle :WorkStyleDivision.values()){
+            String myWorkStyle = myWorkingWorkStyle.name();
+            System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
+            answerWorkAttendanceSubStatus(myWorkStyle);
+            answerDescriptionOfWorkAttendanceSubStatus(myWorkStyle);
+        }
     }
 
     private static void answerWorkAttendanceSubStatus(final String myWorkStyle){
