@@ -14,7 +14,7 @@ public class Actor_Worker {
 
         //※正常系ひんしつてすと(※回答メッセージ出力)
         normalAnswer();
-
+        //※正常系ひんしつてすと(※区分値りすと確認)
         checkCreatedList();
 
         //※異常系

@@ -11,7 +11,7 @@ class Actor_Worker {
     public static void main(final String[] args) {
         //※正常系ひんしつてすと(※回答メッセージ出力)
         normalAnswer();
-
+        //※正常系ひんしつてすと(※区分値りすと確認)
         checkCreatedList();
 
         //※異常系
