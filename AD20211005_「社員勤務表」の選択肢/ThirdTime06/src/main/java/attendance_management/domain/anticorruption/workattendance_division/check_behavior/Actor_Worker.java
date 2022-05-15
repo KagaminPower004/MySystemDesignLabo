@@ -22,6 +22,7 @@ class Actor_Worker {
         //　※用途：『社員勤務表』アプリケーションのヘルプ機能など
         // (※画面部品オブジェクトをマウスホイールするとうっすら出てくるやつとか)
         // 参考)https://hikari-blog.com/enum-loop/
+        System.out.println( "*******Start to check method of [makeAnswer()] !!*******");
         for(WorkStyleDivision myWorkingWorkStyle :WorkStyleDivision.values()){
             String myWorkStyle = myWorkingWorkStyle.name();
             System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
@@ -33,20 +34,11 @@ class Actor_Worker {
         //全リストの全区分値の内容確認！
         // ※用途：画面上のラベルまたはコンボボックスオブジェクト、みたいなやつにぶっこむなど
         // 参考)https://hikari-blog.com/enum-loop/
+        System.out.println( "*******Start to check method of [createList()] !!*******");
         for(WorkStyleDivision myWorkingWorkStyle :WorkStyleDivision.values()){
             String myWorkStyle = myWorkingWorkStyle.name();
             System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
-            System.out.println
-                    (
-                            //参考)https://itsakura.com/java-stream#s12
-                            new AnswerService_WorkAttendanceDivision(myWorkStyle)
-                                    .createList()
-                                    .stream()
-                                    //※参考)『::』の部分は『メソッド参照』
-                                    // https://atmarkit.itmedia.co.jp/ait/articles/1407/28/news023_3.html
-                                    .map(Interface_WorkAttendanceDivision::name)
-                                    .collect(Collectors.toList())
-                    );
+            outputCreatedList(myWorkStyle);
         }
     }
 
@@ -56,5 +48,18 @@ class Actor_Worker {
                 .makeAnswer();
 
         System.out.println(myAnswerMessage);
+    }
+    private static void outputCreatedList(final String myWorkStyle){
+        System.out.println
+                (
+                        //参考)https://itsakura.com/java-stream#s12
+                        new AnswerService_WorkAttendanceDivision(myWorkStyle)
+                                .createList()
+                                .stream()
+                                //※参考)『::』の部分は『メソッド参照』
+                                // https://atmarkit.itmedia.co.jp/ait/articles/1407/28/news023_3.html
+                                .map(Interface_WorkAttendanceDivision::name)
+                                .collect(Collectors.toList())
+                );
     }
 }
