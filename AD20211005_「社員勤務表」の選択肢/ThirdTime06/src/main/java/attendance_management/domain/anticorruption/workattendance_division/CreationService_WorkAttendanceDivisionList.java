@@ -2,17 +2,17 @@ package attendance_management.domain.anticorruption.workattendance_division;
 
 import attendance_management.domain.model.workstyle_division.Judge_WorkStyleDivision;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class AnswerService_WorkAttendanceDivision {
+public class CreationService_WorkAttendanceDivisionList {
 
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceDivision>
                 myWorkAttendanceDivision_List = new ArrayList<>();
 
-    public AnswerService_WorkAttendanceDivision(final String myWorkStyle)
+    public CreationService_WorkAttendanceDivisionList(final String myWorkStyle)
         {
             //引数チェック
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
@@ -22,14 +22,7 @@ public class AnswerService_WorkAttendanceDivision {
             this.myWorkStyle = myWorkStyle;
         }
 
-    public final String makeAnswer()
-        {
-            //まとりょーしか！！
-            return new CreationService_AnswerOfWorkAttendanceDivision(this.myWorkStyle)
-                    .makeAnswer();
-        }
-
-    public final List<Interface_WorkAttendanceDivision> createList()
+    public final List<Interface_WorkAttendanceDivision> create()
         {
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
 

@@ -6,7 +6,7 @@ import attendance_management.domain.support.tool.NewLine;
 class CreationService_AnswerOfWorkAttendanceDivision {
 
     private final String myWorkStyle;
-    private final AnswerService_WorkAttendanceDivision myWorkAttendanceDivision;
+    private final CreationService_WorkAttendanceDivisionList myWorkAttendanceDivisionList;
 
     private static final String        myOneOfNewLine       = new NewLine().executed();
 
@@ -18,10 +18,11 @@ class CreationService_AnswerOfWorkAttendanceDivision {
 
             //フィールドセット
             this.myWorkStyle = myWorkStyle;
-            this.myWorkAttendanceDivision = new AnswerService_WorkAttendanceDivision(myWorkStyle);
+            this.myWorkAttendanceDivisionList
+                    = new CreationService_WorkAttendanceDivisionList(myWorkStyle);
         }
 
-    public final String makeAnswer()
+    public final String create()
         {
             final String myAnswer_the_first_part
                     =  "If the workstyle is " + myWorkStyle
@@ -29,7 +30,7 @@ class CreationService_AnswerOfWorkAttendanceDivision {
 
             final StringBuilder myAnswer_the_main_part_work = new StringBuilder();
             for (final Interface_WorkAttendanceDivision
-                    myWorkingDivision : this.myWorkAttendanceDivision.createList())
+                    myWorkingDivision : this.myWorkAttendanceDivisionList.create())
                 {
                     myAnswer_the_main_part_work
                             .append("  ●").append(myWorkingDivision.name())

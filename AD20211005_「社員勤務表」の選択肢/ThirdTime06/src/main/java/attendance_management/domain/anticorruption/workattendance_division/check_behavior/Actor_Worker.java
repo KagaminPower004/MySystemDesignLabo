@@ -1,7 +1,6 @@
 package attendance_management.domain.anticorruption.workattendance_division.check_behavior;
 
-import attendance_management.domain
-        .anticorruption.workattendance_division.AnswerService_WorkAttendanceDivision;
+import attendance_management.domain.anticorruption.workattendance_division.Service_WorkAttendanceDivision;
 import attendance_management.domain.anticorruption.workattendance_division.Interface_WorkAttendanceDivision;
 import attendance_management.domain.model.workstyle_division.WorkStyleDivision;
 
@@ -22,7 +21,7 @@ class Actor_Worker {
         //　※用途：『社員勤務表』アプリケーションのヘルプ機能など
         // (※画面部品オブジェクトをマウスホイールするとうっすら出てくるやつとか)
         // 参考)https://hikari-blog.com/enum-loop/
-        System.out.println( "*******Start to check method of [makeAnswer()] !!*******");
+        System.out.println( "*******Start to check method of [answer()] !!*******");
         for(WorkStyleDivision myWorkingWorkStyle :WorkStyleDivision.values()){
             String myWorkStyle = myWorkingWorkStyle.name();
             System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
@@ -34,7 +33,7 @@ class Actor_Worker {
         //全リストの全区分値の内容確認！
         // ※用途：画面上のラベルまたはコンボボックスオブジェクト、みたいなやつにぶっこむなど
         // 参考)https://hikari-blog.com/enum-loop/
-        System.out.println( "*******Start to check method of [createList()] !!*******");
+        System.out.println( "*******Start to check method of [list()] !!*******");
         for(WorkStyleDivision myWorkingWorkStyle :WorkStyleDivision.values()){
             String myWorkStyle = myWorkingWorkStyle.name();
             System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
@@ -44,8 +43,8 @@ class Actor_Worker {
 
     private static void answer(final String myWorkStyle){
         final String myAnswerMessage
-                = new AnswerService_WorkAttendanceDivision(myWorkStyle)
-                .makeAnswer();
+                = new Service_WorkAttendanceDivision(myWorkStyle)
+                        .answer();
 
         System.out.println(myAnswerMessage);
     }
@@ -53,8 +52,8 @@ class Actor_Worker {
         System.out.println
                 (
                         //参考)https://itsakura.com/java-stream#s12
-                        new AnswerService_WorkAttendanceDivision(myWorkStyle)
-                                .createList()
+                        new Service_WorkAttendanceDivision(myWorkStyle)
+                                .list()
                                 .stream()
                                 //※参考)『::』の部分は『メソッド参照』
                                 // https://atmarkit.itmedia.co.jp/ait/articles/1407/28/news023_3.html
