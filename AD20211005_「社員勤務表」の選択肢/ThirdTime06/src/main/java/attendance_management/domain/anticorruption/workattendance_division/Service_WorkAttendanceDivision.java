@@ -9,7 +9,7 @@ public class Service_WorkAttendanceDivision {
 
     public Service_WorkAttendanceDivision(final String myWorkStyle)
         {
-            //引数チェック！
+            //引数チェック
             new Check_SpellingOfWorkStyleDivision(myWorkStyle)
                     .isExceptionOccurred();
 
