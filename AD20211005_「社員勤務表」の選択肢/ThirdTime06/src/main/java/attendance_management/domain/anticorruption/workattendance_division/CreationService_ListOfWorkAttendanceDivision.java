@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CreationService_WorkAttendanceDivisionList {
+public class CreationService_ListOfWorkAttendanceDivision {
 
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceDivision>
                 myWorkAttendanceDivision_List = new ArrayList<>();
 
-    public CreationService_WorkAttendanceDivisionList(final String myWorkStyle)
+    public CreationService_ListOfWorkAttendanceDivision(final String myWorkStyle)
         {
             //引数チェック
             new Check_SpellingOfWorkStyleDivision(myWorkStyle)

@@ -6,7 +6,7 @@ import attendance_management.domain.support.tool.NewLine;
 class CreationService_AnswerOfWorkAttendanceDivision {
 
     private final String myWorkStyle;
-    private final CreationService_WorkAttendanceDivisionList myWorkAttendanceDivisionList;
+    private final CreationService_ListOfWorkAttendanceDivision myWorkAttendanceDivisionList;
 
     private static final String        myOneOfNewLine       = new NewLine().executed();
 
@@ -19,7 +19,7 @@ class CreationService_AnswerOfWorkAttendanceDivision {
             //フィールドセット
             this.myWorkStyle = myWorkStyle;
             this.myWorkAttendanceDivisionList
-                    = new CreationService_WorkAttendanceDivisionList(myWorkStyle);
+                    = new CreationService_ListOfWorkAttendanceDivision(myWorkStyle);
         }
 
     public final String create()

@@ -27,7 +27,7 @@ public class Service_WorkAttendanceDivision {
     public final List<Interface_WorkAttendanceDivision> list()
         {
             //まとりょーしか！！
-            return new CreationService_WorkAttendanceDivisionList(myWorkStyle)
+            return new CreationService_ListOfWorkAttendanceDivision(myWorkStyle)
                         .create();
         }
 }
