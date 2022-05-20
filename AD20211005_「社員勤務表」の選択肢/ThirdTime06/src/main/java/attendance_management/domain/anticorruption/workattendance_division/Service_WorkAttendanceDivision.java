@@ -1,6 +1,6 @@
 package attendance_management.domain.anticorruption.workattendance_division;
 
-import attendance_management.domain.model.workstyle_division.Judge_WorkStyleDivision;
+import attendance_management.domain.model.workstyle_division.Check_SpellingOfWorkStyleDivision;
 import java.util.List;
 
 public class Service_WorkAttendanceDivision {
@@ -10,8 +10,8 @@ public class Service_WorkAttendanceDivision {
     public Service_WorkAttendanceDivision(final String myWorkStyle)
         {
             //引数チェック
-            final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
-            if(myJudgedWorkStyle.isNG())  { System.out.println("This value does not exist."); }
+            new Check_SpellingOfWorkStyleDivision(myWorkStyle)
+                    .isExceptionOccurred();
 
             //フィールドセット
             this.myWorkStyle = myWorkStyle;

@@ -9,14 +9,15 @@ import java.util.stream.Collectors;
 class Actor_Worker {
     public static void main(final String[] args) {
         //※正常系ひんしつてすと(※回答メッセージ出力)
-        normalAnswer();
+        checkCreatedAnswer();
         //※正常系ひんしつてすと(※区分値りすと確認)
         checkCreatedList();
 
-        //※異常系
+        //※異常系ひんしつてすと(※回答メッセージ出力)
+        errorCheckCreatedAnswer();
     }
 
-    private static void normalAnswer(){
+    private static void checkCreatedAnswer(){
         //全パラメータ網羅 ※なぜ今まで気付けなかったのだろう。。。Orz
         //　※用途：『社員勤務表』アプリケーションのヘルプ機能など
         // (※画面部品オブジェクトをマウスホイールするとうっすら出てくるやつとか)
@@ -38,6 +39,16 @@ class Actor_Worker {
             String myWorkStyle = myWorkingWorkStyle.name();
             System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
             outputCreatedList(myWorkStyle);
+        }
+    }
+
+    private static void errorCheckCreatedAnswer(){
+        //エラーチェック
+        System.out.println( "*******Start to error check method of [answer()] !!*******");
+        for(WorkStyleDivision myWorkingWorkStyle :WorkStyleDivision.values()){
+            String myWorkStyle = myWorkingWorkStyle.name() + ".";
+            System.out.println( "-------Start to check [" + myWorkStyle + "] !!-------");
+            answer(myWorkStyle);
         }
     }
 
