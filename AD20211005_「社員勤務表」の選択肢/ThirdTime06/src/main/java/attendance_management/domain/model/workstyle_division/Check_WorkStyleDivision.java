@@ -4,10 +4,13 @@ import attendance_management.domain.support.base.Check_Enabled_Object;
 
 public class Check_WorkStyleDivision {
 
-    final private WorkStyleDivision myWorkStyleDivision;
+    private final WorkStyleDivision myWorkStyleDivision;
 
     public Check_WorkStyleDivision(final WorkStyleDivision myWorkStyleDivision)
-        { this.myWorkStyleDivision = myWorkStyleDivision; }
+        {
+            //フィールドセット
+            this.myWorkStyleDivision = myWorkStyleDivision;
+        }
 
     public final Boolean isEnabled(){
         // まとりょーしか!!

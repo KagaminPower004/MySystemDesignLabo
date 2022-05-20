@@ -1,5 +1,6 @@
 package attendance_management.domain.anticorruption.workattendance_division;
 
+import attendance_management.domain.model.workstyle_division.Check_SpellingOfWorkStyleDivision;
 import attendance_management.domain.model.workstyle_division.Judge_WorkStyleDivision;
 
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ public class CreationService_WorkAttendanceDivisionList {
     public CreationService_WorkAttendanceDivisionList(final String myWorkStyle)
         {
             //引数チェック
-            final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
-            if(myJudgedWorkStyle.isNG())  { System.out.println("This value does not exist."); }
+            new Check_SpellingOfWorkStyleDivision(myWorkStyle)
+                    .isExceptionOccurred();
 
             //フィールドセット
             this.myWorkStyle = myWorkStyle;

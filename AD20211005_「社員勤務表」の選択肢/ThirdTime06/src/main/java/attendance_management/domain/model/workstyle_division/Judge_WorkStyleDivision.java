@@ -6,9 +6,9 @@ public class Judge_WorkStyleDivision {
 
     public Judge_WorkStyleDivision(final String myStyle)
         {
-            //区分値チェック
-            if( new Check_WorkStyleDivision(WorkStyleDivision.valueOf(myStyle)).isNotEnabled() )
-                { throw new RuntimeException( "This Object is not enabled." ); }
+//            //区分値チェック
+//            if( new Check_WorkStyleDivision(WorkStyleDivision.valueOf(myStyle)).isNotEnabled() )
+//                { throw new RuntimeException( "This Object is not enabled." ); }
 
             //区分値セット
             this.myStyle = myStyle;
