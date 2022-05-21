@@ -1,4 +1,4 @@
-package attendance_management.domain.anticorruption.workattendance_substatus;
+package attendance_management.domain.model.workattendance_substatus;
 
 import attendance_management.domain.model.workoffice_division.WorkOfficeDivision;
 import attendance_management.domain.support.tool.NewLine;

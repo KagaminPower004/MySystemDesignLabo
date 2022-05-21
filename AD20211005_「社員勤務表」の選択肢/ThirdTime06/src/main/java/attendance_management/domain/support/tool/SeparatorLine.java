@@ -1,6 +1,6 @@
 package attendance_management.domain.support.tool;
 
-import attendance_management.domain.anticorruption.workattendance_substatus.Interface_WorkAttendanceSubStatus;
+import attendance_management.domain.model.workattendance_substatus.Interface_WorkAttendanceSubStatus;
 
 public class SeparatorLine implements Interface_WorkAttendanceSubStatus {
     private final String SeparatorLine = "---------------OR---------------";

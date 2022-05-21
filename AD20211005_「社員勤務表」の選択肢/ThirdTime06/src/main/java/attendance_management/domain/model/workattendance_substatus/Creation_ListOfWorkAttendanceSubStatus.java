@@ -1,13 +1,13 @@
-package attendance_management.domain.anticorruption.workattendance_substatus;
+package attendance_management.domain.model.workattendance_substatus;
 
 import attendance_management.domain.model.workstyle_division.Judge_WorkStyleDivision;
 import attendance_management.domain.support.tool.SeparatorLine;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class AnswerService_WorkAttendanceSubStatus {
+class Creation_ListOfWorkAttendanceSubStatus {
 
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceSubStatus>
@@ -15,7 +15,7 @@ public class AnswerService_WorkAttendanceSubStatus {
 
     private static final SeparatorLine mySeparatorLine = new SeparatorLine();
 
-    public AnswerService_WorkAttendanceSubStatus(final String myWorkStyle)
+    public Creation_ListOfWorkAttendanceSubStatus(final String myWorkStyle)
         {
             //引数チェック
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
@@ -25,14 +25,7 @@ public class AnswerService_WorkAttendanceSubStatus {
             this.myWorkStyle = myWorkStyle;
         }
 
-    public final String makeAnswer()
-        {
-            //まとりょーしか!!
-            return new CreationService_AnswerOfWorkAttendanceSubStatus(this.myWorkStyle)
-                        .makeAnswer() ;
-        }
-
-    public final List<Interface_WorkAttendanceSubStatus> createList()
+    public final List<Interface_WorkAttendanceSubStatus> create()
         {
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
 

@@ -1,4 +1,4 @@
-package attendance_management.domain.anticorruption.workattendance_substatus;
+package attendance_management.domain.model.workattendance_substatus;
 
 import attendance_management.domain.model.workday_division.Check_WorkDayDivision;
 import attendance_management.domain.model.workday_division.WorkDayDivision;

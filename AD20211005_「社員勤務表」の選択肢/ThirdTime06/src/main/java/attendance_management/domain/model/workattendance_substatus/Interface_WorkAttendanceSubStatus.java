@@ -1,4 +1,4 @@
-package attendance_management.domain.anticorruption.workattendance_substatus;
+package attendance_management.domain.model.workattendance_substatus;
 
 public interface Interface_WorkAttendanceSubStatus {
     String name();

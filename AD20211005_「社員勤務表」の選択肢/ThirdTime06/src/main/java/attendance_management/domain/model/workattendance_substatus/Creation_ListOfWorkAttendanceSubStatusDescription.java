@@ -1,4 +1,4 @@
-package attendance_management.domain.anticorruption.workattendance_substatus;
+package attendance_management.domain.model.workattendance_substatus;
 
 import attendance_management.domain.model.workstyle_division.Judge_WorkStyleDivision;
 
@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AnswerService_DescriptionOfWorkAttendanceSubStatus {
+class Creation_ListOfWorkAttendanceSubStatusDescription {
 
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceSubStatus>
                 myDescriptionOfWorkAttendanceSubStatus_List = new ArrayList<>();
 
-    public AnswerService_DescriptionOfWorkAttendanceSubStatus(final String myWorkStyle)
+    public Creation_ListOfWorkAttendanceSubStatusDescription(final String myWorkStyle)
         {
             //引数チェック
             final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
@@ -22,14 +22,7 @@ public class AnswerService_DescriptionOfWorkAttendanceSubStatus {
             this.myWorkStyle = myWorkStyle;
         }
 
-    public final String makeAnswer()
-        {
-            //まとりょーしか!！
-            return new CreationService_AnswerOfDescriptionOfWorkAttendanceSubStatus(this.myWorkStyle)
-                    .makeAnswer();
-        }
-
-    public final List<Interface_WorkAttendanceSubStatus> createList()
+    public final List<Interface_WorkAttendanceSubStatus> create()
         {
             Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
 
