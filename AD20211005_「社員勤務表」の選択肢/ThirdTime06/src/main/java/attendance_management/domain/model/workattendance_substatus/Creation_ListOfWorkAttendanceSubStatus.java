@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class Creation_ListOfWorkAttendanceSubStatus {
+class Creation_ListOfWorkAttendanceSubStatus
+        implements Interface_Creation_ListOfWorkAttendanceSubStatus {
 
     private final String myWorkStyle;
     private final List<Interface_WorkAttendanceSubStatus>
@@ -27,16 +28,12 @@ class Creation_ListOfWorkAttendanceSubStatus {
 
     public final List<Interface_WorkAttendanceSubStatus> create()
         {
-            final Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);
-
-            if(myJudgedWorkStyle.isTelework())       { return teleworkSettings(); }
-            if(myJudgedWorkStyle.isPhysical_Work())  { return physical_workSettings(); }
-            if(myJudgedWorkStyle.isNon_Work())       { return non_workSettings(); }
-            else                                     { myWorkAttendanceSubStatus_List.clear(); }
-
-            return  Collections.unmodifiableList(myWorkAttendanceSubStatus_List);
+            //まとりょーしか！：処理分別を委譲
+            return new Router_WorkAttendanceSubStatus2WorkStyle
+                    (this.myWorkStyle,this)
+                    .router();
         }
-    private List<Interface_WorkAttendanceSubStatus> teleworkSettings()
+    public List<Interface_WorkAttendanceSubStatus> teleworkSettings()
         {
             myWorkAttendanceSubStatus_List.add(MultiAdapter_WorkAttendanceSubStatus.WORKING);
             myWorkAttendanceSubStatus_List.add(MultiAdapter_WorkAttendanceSubStatus.OUTSIDE);
@@ -44,7 +41,7 @@ class Creation_ListOfWorkAttendanceSubStatus {
 
             return Collections.unmodifiableList(myWorkAttendanceSubStatus_List);
         }
-    private List<Interface_WorkAttendanceSubStatus> physical_workSettings()
+    public List<Interface_WorkAttendanceSubStatus> physical_workSettings()
         {
             myWorkAttendanceSubStatus_List.add(MultiAdapter_WorkAttendanceSubStatus.WORKING);
             myWorkAttendanceSubStatus_List.add(MultiAdapter_WorkAttendanceSubStatus.INSIDE);
@@ -56,7 +53,7 @@ class Creation_ListOfWorkAttendanceSubStatus {
 
             return Collections.unmodifiableList(myWorkAttendanceSubStatus_List);
         }
-    private List<Interface_WorkAttendanceSubStatus> non_workSettings()
+    public List<Interface_WorkAttendanceSubStatus> non_workSettings()
         {
             myWorkAttendanceSubStatus_List.add(MultiAdapter_WorkAttendanceSubStatus.NON_WORKING);
 
