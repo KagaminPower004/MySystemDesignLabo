@@ -26,5 +26,8 @@ public class CeckBehavior {
         System.out.println( intHoge.IntRecord() + new IntRecord(456).IntRecord() );
         System.out.println( new IntRecord(123 + 456).IntRecord() );
 
+        IntRecord intHogeHoge = new IntRecord(456);
+        System.out.println(intHoge.IntRecord() + intHogeHoge.IntRecord());
+
     }
 }
