@@ -10,24 +10,24 @@ public class CeckBehavior {
 
     }
 
-    private StringRecord hoge;
+    private StringRecord hogeMessage;
     public void test(){
         //フィールドをいじってみる
-        this.hoge = new StringRecord("ヴァルヴァルヴァル!!!");
-        System.out.println(hoge.toString().startsWith("ヴァ"));
-        System.out.println(hoge.Val().startsWith("ヴァ"));
-        System.out.println(hoge.Val().length());
-        System.out.println(hoge.Val());
+        this.hogeMessage = new StringRecord("ヴァルヴァルヴァル!!!");
+        System.out.println(hogeMessage.toString().startsWith("ヴァ"));
+        System.out.println(hogeMessage.Val().startsWith("ヴァ"));
+        System.out.println(hogeMessage.Val().length());
+        System.out.println(hogeMessage.Val());
 
         //ろーかるにすてみる♪
-        IntRecord intHoge = new IntRecord(123);
-        System.out.println(intHoge);
-        System.out.println( intHoge.Val() );
-        System.out.println( intHoge.Val() + new IntRecord(456).Val() );
+        IntRecord hogeAmount = new IntRecord(123);
+        System.out.println(hogeAmount);
+        System.out.println( hogeAmount.Val() );
+        System.out.println( hogeAmount.Val() + new IntRecord(456).Val() );
         System.out.println( new IntRecord(123 + 456).Val() );
 
-        IntRecord intHogeHoge = new IntRecord(456);
-        System.out.println(intHoge.Val() + intHogeHoge.Val());
+        IntRecord hogeHogeAmount = new IntRecord(456);
+        System.out.println(hogeAmount.Val() + hogeHogeAmount.Val());
 
     }
 }
