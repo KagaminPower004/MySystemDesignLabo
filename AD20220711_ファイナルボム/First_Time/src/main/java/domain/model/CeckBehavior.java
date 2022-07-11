@@ -15,19 +15,19 @@ public class CeckBehavior {
         //フィールドをいじってみる
         this.hoge = new StringRecord("ヴァルヴァルヴァル!!!");
         System.out.println(hoge.toString().startsWith("ヴァ"));
-        System.out.println(hoge.StringRecord().startsWith("ヴァ"));
-        System.out.println(hoge.StringRecord().length());
-        System.out.println(hoge.StringRecord());
+        System.out.println(hoge.Val().startsWith("ヴァ"));
+        System.out.println(hoge.Val().length());
+        System.out.println(hoge.Val());
 
         //ろーかるにすてみる♪
         IntRecord intHoge = new IntRecord(123);
         System.out.println(intHoge);
-        System.out.println( intHoge.IntRecord() );
-        System.out.println( intHoge.IntRecord() + new IntRecord(456).IntRecord() );
-        System.out.println( new IntRecord(123 + 456).IntRecord() );
+        System.out.println( intHoge.Val() );
+        System.out.println( intHoge.Val() + new IntRecord(456).Val() );
+        System.out.println( new IntRecord(123 + 456).Val() );
 
         IntRecord intHogeHoge = new IntRecord(456);
-        System.out.println(intHoge.IntRecord() + intHogeHoge.IntRecord());
+        System.out.println(intHoge.Val() + intHogeHoge.Val());
 
     }
 }
