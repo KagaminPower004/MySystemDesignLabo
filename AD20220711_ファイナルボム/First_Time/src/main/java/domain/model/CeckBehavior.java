@@ -2,11 +2,11 @@ package domain.model;
 
 import domain.support.primitive_data_types.*;
 
-public class TestBehavior {
+public class CeckBehavior {
 
     public static void main(String[] args){
 
-        new TestBehavior().test();
+        new CeckBehavior().test();
 
     }
 
