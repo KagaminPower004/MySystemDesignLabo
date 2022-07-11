@@ -10,24 +10,24 @@ public class CeckBehavior {
 
     }
 
-    private StringRecord hogeMessage;
+    private StringOfImmutable hogeMessage;
     public void test(){
         //フィールドをいじってみる
-        this.hogeMessage = new StringRecord("ヴァルヴァルヴァル!!!");
-        System.out.println(hogeMessage.toString().startsWith("ヴァ"));
-        System.out.println(hogeMessage.Val().startsWith("ヴァ"));
-        System.out.println(hogeMessage.Val().length());
-        System.out.println(hogeMessage.Val());
+        this.hogeMessage = new StringOfImmutable("ヴァルヴァルヴァル!!!");
+        System.out.println( hogeMessage.toString().startsWith("ヴァ") );
+        System.out.println( hogeMessage.Value().startsWith("ヴァ") );
+        System.out.println( hogeMessage.Value().length() );
+        System.out.println( hogeMessage.Value() );
 
         //ろーかるにすてみる♪
-        IntRecord hogeAmount = new IntRecord(123);
-        System.out.println(hogeAmount);
-        System.out.println( hogeAmount.Val() );
-        System.out.println( hogeAmount.Val() + new IntRecord(456).Val() );
-        System.out.println( new IntRecord(123 + 456).Val() );
+        IntOfImmutable hogeAmount = new IntOfImmutable(123);
+        System.out.println( hogeAmount );
+        System.out.println( hogeAmount.Value() );
+        System.out.println( hogeAmount.Value() + new IntOfImmutable(456).Value() );
+        System.out.println( new IntOfImmutable(123 + 456).Value() );
 
-        IntRecord hogeHogeAmount = new IntRecord(456);
-        System.out.println(hogeAmount.Val() + hogeHogeAmount.Val());
+        IntOfImmutable hogeHogeAmount = new IntOfImmutable(456);
+        System.out.println( hogeAmount.Value() + hogeHogeAmount.Value() );
 
     }
 }
