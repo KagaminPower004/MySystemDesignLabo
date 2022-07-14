@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/AD20220711_ファイナルボム/First_Time/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/AD20211005_「社員勤務表」の選択肢/作成中" />
     </content>
     <orderEntry type="inheritedJdk" />
