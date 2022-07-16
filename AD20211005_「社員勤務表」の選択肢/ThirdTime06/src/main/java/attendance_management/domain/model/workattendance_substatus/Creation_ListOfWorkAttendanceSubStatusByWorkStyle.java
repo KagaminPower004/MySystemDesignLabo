@@ -5,12 +5,12 @@ import attendance_management.domain.model.workstyle_division.WorkStyleDivision;
 
 import java.util.List;
 
-public class Router_WorkAttendanceSubStatus2WorkStyle {
+public class Creation_ListOfWorkAttendanceSubStatusByWorkStyle {
 
     private final String myWorkStyle;
     private final Interface_Creation_ListOfWorkAttendanceSubStatus myCreation_ListOfWorkAttendanceSubStatus;
 
-    public Router_WorkAttendanceSubStatus2WorkStyle
+    public Creation_ListOfWorkAttendanceSubStatusByWorkStyle
         (
                 final String myWorkStyle
               , final Interface_Creation_ListOfWorkAttendanceSubStatus myCreation_ListOfWorkAttendanceSubStatus
@@ -25,7 +25,7 @@ public class Router_WorkAttendanceSubStatus2WorkStyle {
                 this.myCreation_ListOfWorkAttendanceSubStatus = myCreation_ListOfWorkAttendanceSubStatus;
             }
 
-    public final List<Interface_WorkAttendanceSubStatus> router()
+    public final List<Interface_WorkAttendanceSubStatus> create()
 
     {
         Judge_WorkStyleDivision myJudgedWorkStyle = new Judge_WorkStyleDivision(myWorkStyle);

@@ -31,11 +31,16 @@ class Creation_AnswerOfWorkAttendanceSubStatusDescription {
                     myWorkingDescription :this.mySubStatusDescription.create())
                 {
                     myAnswer_the_main_part_work
-                            .append("  ●").append(myWorkingDescription.name()).append(":")
+                            .append("  ●")
+                            .append(myWorkingDescription.name())
+                            .append(":")
                             .append(myOneOfNewLine)
                             .append("    ⇒")
                             .append(myWorkingDescription.description()
-                                    .replace(myOneOfNewLine,myOneOfNewLine + "      "))
+                                    .replace(myOneOfNewLine
+                                            ,myOneOfNewLine + "      "
+                                    )
+                            )
                             .append(myOneOfNewLine);
                 }
             final String myAnswer_the_main_part = myAnswer_the_main_part_work.toString();

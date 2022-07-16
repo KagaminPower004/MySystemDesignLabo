@@ -34,14 +34,21 @@ class Creation_AnswerOfWorkAttendanceSubStatus {
                     myWorkingSubStatus : this.mySubStatusList.create())
                 {
                     myAnswer_the_main_part_work
-                            .append("  ●").append(myWorkingSubStatus.name()).append(myOneOfNewLine);
+                            .append("  ●")
+                            .append(myWorkingSubStatus.name())
+                            .append(myOneOfNewLine);
                 }
             final String myAnswer_the_main_part
                     = myAnswer_the_main_part_work.toString()
-                    .replace(" ●" + mySeparatorLine.name() ,mySeparatorLine.name())
-                    .replace(MultiAdapter_WorkAttendanceSubStatus.INSIDE.name()
+                    .replace(
+                            " ●" + mySeparatorLine.name()
+                            ,mySeparatorLine.name()
+                    )
+                    .replace(
+                            MultiAdapter_WorkAttendanceSubStatus.INSIDE.name()
                             ,MultiAdapter_WorkAttendanceSubStatus.INSIDE.name()
-                                    + " (*there are notes.)");
+                                    + " (*there are notes.)"
+                    );
 
             final String myAnswer_the_last_part = "." + myOneOfNewLine;
 

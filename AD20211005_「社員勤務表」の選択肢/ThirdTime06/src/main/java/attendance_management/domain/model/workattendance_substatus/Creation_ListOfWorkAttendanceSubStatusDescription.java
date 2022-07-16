@@ -26,9 +26,12 @@ class Creation_ListOfWorkAttendanceSubStatusDescription
     public final List<Interface_WorkAttendanceSubStatus> create()
         {
             //まとりょーしか！：処理分別を委譲
-            return new Router_WorkAttendanceSubStatus2WorkStyle
-                    (this.myWorkStyle,this)
-                        .router();
+            return new Creation_ListOfWorkAttendanceSubStatusByWorkStyle
+                    (
+                            this.myWorkStyle
+                            ,this
+                    )
+                    .create();
         }
 
     public List<Interface_WorkAttendanceSubStatus> teleworkSettings()
