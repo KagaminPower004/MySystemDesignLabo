@@ -1,3 +1,6 @@
 package domain.support.primitive_data_types;
 
-public record IntOfImmutable(int Int) { public int value(){ return this.Int; } }
+import application.service.Interface_IntOfImmutable;
+
+public record IntOfImmutable(int Int) implements Interface_IntOfImmutable
+    { public int value(){ return this.Int; } }
