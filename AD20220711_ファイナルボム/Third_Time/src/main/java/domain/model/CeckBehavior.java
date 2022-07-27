@@ -1,7 +1,8 @@
 package domain.model;
 
 import application.service.Interface_IntOfImmutable;
-import domain.support.primitive_data_types.*;
+import domain.support.primitive_data_types.IntOfImmutable;
+import domain.support.primitive_data_types.StringOfImmutable;
 
 public class CeckBehavior {
 
