@@ -34,7 +34,7 @@ public class CeckBehavior {
         System.out.println( this.hoge( new StringOfImmutable("aaa") ) );
     }
 
-    public void test02( Interface_IntOfImmutable Param01 ){
+    public void test02(Interface_IntOfImmutable Param01 ){
         System.out.println( "引数の値は..." );
 
         System.out.println( Param01.value() );
