@@ -42,7 +42,12 @@ public class CeckBehavior {
 
         System.out.println( "続いて上記に123を足す" );
 
-        System.out.println( Param01.value() + 123 );
+        System.out.println
+            (
+                    new IntOfImmutable( Param01.value() ).value()
+                    +
+                    123
+            );
     }
 
     private String hoge( StringOfImmutable aaa ){
