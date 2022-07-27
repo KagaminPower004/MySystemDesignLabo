@@ -44,7 +44,8 @@ public class CeckBehavior {
 
         System.out.println
             (
-                    new IntOfImmutable( Param01.value() ).value()
+                    new domain.support.primitive_data_types.
+                            IntOfImmutable( Param01.value() ).value()
                     +
                     123
             );
