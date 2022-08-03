@@ -1,8 +1,8 @@
 package domain.model;
 
 import application.service.Interface_IntOfImmutable;
-import domain.support.primitive_data_types.IntOfImmutable;
-import domain.support.primitive_data_types.StringOfImmutable;
+import domain.support.type.IntOfImmutable;
+import domain.support.type.StringOfImmutable;
 
 public class CeckBehavior {
 
@@ -44,8 +44,7 @@ public class CeckBehavior {
 
         System.out.println
             (
-                    new domain.support.primitive_data_types.
-                            IntOfImmutable( Param01.value() ).value()
+                    new IntOfImmutable( Param01.value() ).value()
                     +
                     123
             );
