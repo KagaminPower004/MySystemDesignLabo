@@ -33,6 +33,13 @@ public class CeckBehavior {
 
         //ろーかるめそっどをじっけんしてみぅ♪
         System.out.println( this.hoge( new StringOfImmutable("aaa") ) );
+
+        //intをIntegerに変換するぉ♪
+        System.out.println("[999]と[777]をぢか打ちで比較するぉ♪");
+        System.out.println( new IntOfImmutable( 999 ).toInteger().compareTo(777) );
+
+        System.out.println("[777]と[999]をぢか打ちで比較するぉ♪");
+        System.out.println( new IntOfImmutable( 777 ).toInteger().compareTo(999) );
     }
 
     public void test02(Interface_IntOfImmutable Param01 ){
