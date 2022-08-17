@@ -1,5 +1,7 @@
 package application.service;
 
+import domain.support.type.Interface_IntOfImmutable;
+
 public class Ceck_IntegrationBehavior {
     public static void main(String[] args) {
         //アプリケーション層のプリミティブなだけのレコードクラスを、
