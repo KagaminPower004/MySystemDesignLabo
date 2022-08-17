@@ -1,6 +1,6 @@
 package domain.model;
 
-import application.service.Interface_IntOfImmutable;
+import domain.support.type.Interface_IntOfImmutable;
 import domain.support.type.IntOfImmutable;
 import domain.support.type.StringOfImmutable;
 
