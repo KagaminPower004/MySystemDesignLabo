@@ -4,11 +4,11 @@ import domain.support.type.Interface_IntOfImmutable;
 import domain.support.type.IntOfImmutable;
 import domain.support.type.StringOfImmutable;
 
-public class CeckBehavior {
+public class CheckBehavior {
 
     public static void main(String[] args){
 
-        new CeckBehavior().test();
+        new CheckBehavior().test();
 
     }
 
